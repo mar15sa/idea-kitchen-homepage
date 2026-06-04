@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idea Kitchen — Simple Recipes for Everyday AI</title>
+<meta name="description" content="Idea Kitchen turns AI overwhelm into simple, practical recipes for busy professionals. Learn one useful shortcut at a time, no jargon required.">
+<meta property="og:title" content="Idea Kitchen - Simple Recipes for Everyday AI">
+<meta property="og:description" content="Simple, practical AI recipes for busy professionals. No jargon, no hype, just useful shortcuts you can actually try.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ideakitchen.ai/">
+<meta property="og:image" content="https://ideakitchen.ai/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Idea Kitchen - Simple Recipes for Everyday AI">
+<meta name="twitter:description" content="Simple, practical AI recipes for busy professionals.">
+<meta name="twitter:image" content="https://ideakitchen.ai/social-preview.png">
+<link rel="canonical" href="https://ideakitchen.ai/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Homemade+Apple&family=Nanum+Pen+Script&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=14">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Source Serif 4',Georgia,serif;
+  background:#1A1A1A;
+  color:#1A1A1A;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* The "book" sits on a dark surface */
+.book{
+  max-width:860px;
+  margin:2rem auto;
+  background:#FFFDF7;
+  min-height:100vh;
+  box-shadow:
+    -4px 0 12px rgba(0,0,0,.15),
+    4px 0 12px rgba(0,0,0,.08),
+    0 8px 30px rgba(0,0,0,.2);
+  position:relative;
+}
+/* spine shadow on the left edge */
+.book::before{
+  content:'';position:absolute;top:0;bottom:0;left:0;width:30px;
+  background:linear-gradient(90deg,rgba(0,0,0,.08),transparent);
+  pointer-events:none;
+}
+
+.book-inner{padding:4rem 4rem 3rem 5rem;}
+
+/* Title page feel */
+.title-section{
+  text-align:center;
+  padding-bottom:3rem;
+  border-bottom:1px solid rgba(138,130,110,.25);
+  margin-bottom:3rem;
+}
+.title-kicker{
+  font-family:'Special Elite',monospace;
+  font-size:.7rem;letter-spacing:3px;text-transform:uppercase;
+  color:#8B9E7C;margin-bottom:1.5rem;
+}
+.title-name{
+  font-family:'Special Elite',monospace;
+  font-size:clamp(2.5rem,5vw,3.5rem);
+  color:#1A1A1A;line-height:1.1;margin-bottom:.8rem;
+}
+.title-tagline{
+  font-size:1.15rem;color:#4A2040;margin-bottom:.3rem;
+}
+.title-tagline2{
+  font-size:1.15rem;color:#4A2040;margin-bottom:2rem;
+}
+.title-author{
+  font-family:'Homemade Apple',cursive;
+  font-size:.85rem;color:#A0522D;
+}
+.title-rule{
+  width:40px;border-top:1px solid rgba(138,130,110,.4);
+  margin:1.5rem auto 1.5rem;
+}
+/* Full-width section divider — matches the rule above Contents (.toc border-top) */
+.section-rule{
+  max-width:480px;border-top:1px solid rgba(138,130,110,.25);
+  margin:0 auto 2rem;
+}
+
+/* Dedication / pitch — like the page you read before the recipes start */
+.dedication{
+  max-width:520px;
+  margin:0 auto 3rem;
+  text-align:center;
+}
+.dedication p{
+  font-size:1rem;opacity:.82;margin-bottom:1.2rem;line-height:1.8;
+}
+.dedication em{color:#4A2040;}
+
+/* Table of contents */
+.toc{
+  max-width:480px;
+  margin:0 auto 3rem;
+  border-top:1px solid rgba(138,130,110,.25);
+  padding-top:2rem;
+}
+.toc h2{
+  font-family:'Special Elite',monospace;
+  font-size:1.1rem;color:#4A2040;
+  text-align:center;margin-bottom:1.5rem;
+  letter-spacing:1px;
+}
+.toc-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  padding:.6rem 0;
+  border-bottom:1px dotted rgba(138,130,110,.35);
+}
+.toc-item:last-child{border-bottom:none;}
+.toc-name{font-family:'Special Elite',monospace;font-size:.9rem;color:#1A1A1A;}
+.toc-desc{font-size:.78rem;color:#4A2040;opacity:.7;font-style:italic;}
+
+/* About the cook — handwritten note card */
+.author-note{
+  max-width:440px;
+  margin:0 auto 3rem;
+  background:#E8DABC url('about-cook-paper.jpg') center / cover no-repeat;
+  border-radius:5px 9px 7px 4px;
+  padding:2rem 2.2rem 1.8rem;
+  box-shadow:
+    0 2px 2px rgba(75,55,30,.16),
+    2px 7px 9px rgba(75,55,30,.16),
+    4px 14px 24px rgba(75,55,30,.12);
+  transform:rotate(-0.6deg);
+  position:relative;
+  border:1px solid rgba(140,105,55,.24);
+}
+.author-label{
+  font-family:'Special Elite',monospace;
+  font-size:.85rem;letter-spacing:2px;text-transform:uppercase;
+  color:#4A2040;text-align:center;margin-bottom:1rem;
+}
+.author-note-body{
+  font-family:'Nanum Pen Script',cursive;
+  font-size:1.15rem;
+  color:#3A3020;
+  line-height:1.8;
+}
+.author-note-sig{
+  font-family:'Nanum Pen Script',cursive;
+  font-size:1.4rem;
+  color:#4A2040;
+  margin-top:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:.6rem;
+}
+.author-note-heart{
+  color:#A0522D;
+  font-size:1.3rem;
+  line-height:1;
+}
+
+/* Subscribe — the "order this book" moment */
+.subscribe-section{
+  max-width:420px;
+  margin:0 auto;
+  text-align:center;
+  border-top:1px solid rgba(138,130,110,.25);
+  padding-top:2.5rem;
+}
+.subscribe-section h2{
+  font-family:'Special Elite',monospace;
+  font-size:1.3rem;color:#4A2040;margin-bottom:.6rem;
+}
+.subscribe-section p{
+  font-size:.92rem;opacity:.7;margin-bottom:1.5rem;
+}
+.sub-row{display:flex;gap:.5rem;margin-bottom:.7rem;}
+.sub-row input{
+  flex:1;font-family:'Source Serif 4',Georgia,serif;font-size:.9rem;
+  padding:.7rem 1rem;border:1.5px solid #1A1A1A;border-radius:3px;background:#FFF8F0;
+}
+.sub-row input::placeholder{color:rgba(26,26,26,.35);}
+.sub-row input:focus{outline:none;border-color:#A0522D;box-shadow:0 0 0 3px rgba(160,82,45,.12);}
+.sub-row button{
+  font-family:'Special Elite',monospace;font-size:.85rem;padding:.7rem 1.4rem;
+  background:#A0522D;color:#FFF8F0;border:none;border-radius:3px;cursor:pointer;white-space:nowrap;
+}
+.sub-row button:hover{background:#8A4424;}
+.sub-note{font-size:.75rem;opacity:.45;margin-bottom:2rem;}
+
+/* Page number */
+.page-num{
+  text-align:center;font-family:'Source Serif 4',Georgia,serif;
+  font-size:.8rem;color:#1A1A1A;opacity:.3;padding-top:2rem;
+}
+
+/* Footer links */
+.book-footer{
+  display:flex;gap:2rem;justify-content:center;padding:2rem;
+}
+.book-footer a{
+  font-family:'Special Elite',monospace;font-size:.8rem;
+  color:#FFF8F0;opacity:.5;text-decoration:none;
+  transition:opacity .2s;
+}
+.book-footer a:hover{opacity:.8;}
+
+@media(max-width:600px){
+  .book-inner{padding:2.5rem 2rem 2rem 2.5rem;}
+  .sub-row{flex-direction:column;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- Shared Site Nav -->
+<nav class="site-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+            <div class="nav-brand-text">
+                <span class="nav-name">Idea Kitchen</span>
+                <span class="nav-tagline">AI recipes for busy professionals</span>
+            </div>
+        </a>
+        <div class="nav-subscribe-wrap">
+            <a href="https://ideakitchen.substack.com/subscribe" class="nav-subscribe" target="_blank" rel="noopener">Subscribe →</a>
+        </div>
+    </div>
+</nav>
+
+<div class="book">
+  <div class="book-inner">
+
+    <!-- Title page -->
+    <div class="title-section">
+      <p class="title-kicker">Est. 2024</p>
+      <h1 class="title-name">Idea Kitchen</h1>
+      <p class="title-tagline">Simple recipes for everyday AI.</p>
+      <p class="title-tagline2">Made for humans.</p>
+      <div class="title-rule"></div>
+      <p class="title-author">by Marissa Goldberg</p>
+    </div>
+
+    <!-- Dedication / pitch -->
+    <div class="dedication">
+      <p>For everyone who keeps hearing they should "use AI" but can't find advice that doesn't sound like it was written by a robot, for robots.</p>
+      <p>Idea Kitchen is <strong>your guide to using AI in real life</strong>, so you spend less time wondering where to start and more time on what matters to you.</p>
+      <p><em>No jargon. No hype. Just real recipes you can actually use.</em></p>
+    </div>
+
+    <!-- Table of contents -->
+    <div class="toc">
+      <h2>Contents</h2>
+      <div class="toc-item">
+        <span class="toc-name">Recipes</span>
+        <span class="toc-desc">step-by-step AI guides for real tasks</span>
+      </div>
+      <div class="toc-item">
+        <span class="toc-name">What's Simmering</span>
+        <span class="toc-desc">real ways people are using AI</span>
+      </div>
+      <div class="toc-item">
+        <span class="toc-name">The Spark</span>
+        <span class="toc-desc">our Slack community + daily AI briefing</span>
+      </div>
+      <div class="toc-item">
+        <span class="toc-name">Cooking with AI (Live!)</span>
+        <span class="toc-desc">hands-on events where we build together</span>
+      </div>
+    </div>
+
+    <!-- About the cook -->
+    <div class="section-rule"></div>
+    <div class="author-label">About the Cook</div>
+    <div class="author-note">
+      <p class="author-note-body">Hi, I'm Marissa. I'd spent my whole career in tech and AI, so when I came back from maternity leave, I assumed I'd pick it back up easily. Nope. The field had exploded while I was out, and everything I found to catch up was either too in-the-weeds or all hype.<br><br>So I built what I wished existed. A place that cuts through the noise and hands you one thing that actually works. Let's use AI to give you back time for the things that matter.</p>
+    </div>
+
+    <!-- Subscribe -->
+    <div class="subscribe-section">
+      <h2>Get simple recipes for everyday life</h2>
+      <p>Learn practical ways to use AI, one idea at a time. Join 1,000+ readers.</p>
+      <a href="https://ideakitchen.substack.com/subscribe" target="_blank" rel="noopener" style="display:inline-block;font-family:'Special Elite',monospace;font-size:.95rem;padding:.8rem 2.2rem;background:#A0522D;color:#FFF8F0;text-decoration:none;border-radius:3px;margin-bottom:.7rem;">Subscribe →</a>
+      <p class="sub-note">Free. Unsubscribe whenever.</p>
+    </div>
+
+    <p class="page-num">i</p>
+
+  </div>
+</div>
+
+<!-- Shared Footer -->
+<footer class="footer landing-footer">
+  <div class="container">
+    <div class="scribble-divider">* * *</div>
+    <div class="footer-content">
+      <nav class="footer-nav">
+        <a href="https://ideakitchen.substack.com" target="_blank" rel="noopener">Read on Substack</a>
+        <span>•</span>
+        <a href="https://ideakitchen.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a>
+      </nav>
+      <p class="copyright">© 2026 Idea Kitchen.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
