@@ -32,6 +32,7 @@ body{
 
 /* The "book" sits on a dark surface */
 .book{
+  width:calc(100% - 4rem);
   max-width:860px;
   margin:2rem auto;
   background:#FFFDF7;
@@ -212,6 +213,7 @@ body{
 .book-footer a:hover{opacity:.8;}
 
 @media(max-width:600px){
+  .book{width:calc(100% - 1rem);margin:1rem auto;}
   .book-inner{padding:2.5rem 2rem 2rem 2.5rem;}
   .sub-row{flex-direction:column;}
 }
