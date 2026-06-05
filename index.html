@@ -165,6 +165,56 @@ body{
   font-size:1.3rem;
   line-height:1;
 }
+.author-cook{
+  position:relative;
+  max-width:520px;
+  margin:1rem auto 3.5rem;
+  padding-bottom:88px;
+}
+.author-cook .author-label{
+  font-family:'Special Elite',monospace;
+  font-size:1.1rem;
+  letter-spacing:1px;
+  text-transform:none;
+  color:#4A2040;
+  text-align:center;
+  margin-bottom:1.8rem;
+}
+.author-photo{
+  display:block;
+  margin:0 auto 1.5rem;
+  width:185px;
+}
+.author-photo img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.author-cook .author-note{
+  max-width:100%;
+  margin:0;
+  background:none;
+  border:none;
+  box-shadow:none;
+  transform:none;
+  border-radius:0;
+  padding:0;
+}
+.author-cook .author-note-body{
+  font-family:'Special Elite','Courier New',monospace;
+  font-size:.9rem;
+  line-height:1.9;
+  color:#2D2B2B;
+  text-align:left;
+}
+.author-sage{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:70px;
+  height:auto;
+  pointer-events:none;
+}
 
 /* Subscribe — the "order this book" moment */
 .subscribe-section{
@@ -259,7 +309,7 @@ body{
 
     <!-- Table of contents -->
     <div class="toc">
-      <h2>Contents</h2>
+      <h2>What's on the Menu</h2>
       <div class="toc-item">
         <span class="toc-name">Recipes</span>
         <span class="toc-desc">step-by-step AI guides for real tasks</span>
@@ -280,9 +330,13 @@ body{
 
     <!-- About the cook -->
     <div class="section-rule"></div>
-    <div class="author-label">About the Cook</div>
-    <div class="author-note">
-      <p class="author-note-body">Hi, I'm Marissa. I'd spent my whole career in tech and AI, so when I came back from maternity leave, I assumed I'd pick it back up easily. Nope. The field had exploded while I was out, and everything I found to catch up was either too in-the-weeds or all hype.<br><br>So I built what I wished existed. A place that cuts through the noise and hands you one thing that actually works. Let's use AI to give you back time for the things that matter.</p>
+    <div class="author-cook">
+      <div class="author-label">About the Cook</div>
+      <figure class="author-photo"><img src="marissa-cut.png" alt="Marissa Goldberg, illustrated portrait"></figure>
+      <div class="author-note">
+        <p class="author-note-body">Hey there, I'm Marissa. I'd spent my whole career in tech and AI, so when I came back from maternity leave, I assumed I'd pick it back up easily. Nope. The field had exploded while I was out, and everything I found to catch up was either too in-the-weeds or all hype.<br><br>So I built what I wished existed. AI for real life. Here's to more time for the things that matter.</p>
+      </div>
+      <img class="author-sage" src="sage.png" alt="" aria-hidden="true">
     </div>
 
     <!-- Subscribe -->
