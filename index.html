@@ -10,6 +10,29 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-W9K29L4FMQ');
+
+  document.addEventListener('click', function(event) {
+    var link = event.target.closest('a[href]');
+    if (!link) return;
+
+    var href = link.getAttribute('href') || '';
+    var text = (link.textContent || '').trim().slice(0, 80);
+    var url = new URL(href, window.location.href);
+    var params = {
+      link_text: text,
+      link_url: url.href,
+      page_path: window.location.pathname,
+      transport_type: 'beacon'
+    };
+
+    if (url.href.indexOf('ideakitchen.substack.com/subscribe') !== -1 || /subscribe/i.test(text)) {
+      gtag('event', 'subscribe_click', params);
+    }
+
+    if (url.hostname.endsWith('substack.com')) {
+      gtag('event', 'substack_click', params);
+    }
+  });
 </script>
 <title>Idea Kitchen — Simple Recipes for Everyday AI</title>
 <meta name="description" content="Idea Kitchen turns AI overwhelm into simple, practical recipes for busy professionals. Learn one useful shortcut at a time, no jargon required.">
