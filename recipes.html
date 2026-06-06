@@ -242,6 +242,12 @@ select.filter-select{
   /* let the index card grow with its content instead of forcing the 5:3
      ratio (which widens the card past the screen on a single column) */
   .recipe-card{aspect-ratio:auto;min-width:0;}
+  /* Keep the tool stamp in the bottom-right corner, but shrink it so it
+     stays on the same line as "Read the recipe" without overlapping on
+     longer tool names (e.g. NotebookLM / Perplexity). */
+  .tool-stamp{padding:2px 6px;gap:3px;height:auto;}
+  .tool-stamp .tool-name{font-size:.52rem;letter-spacing:.2px;}
+  .tool-stamp img{height:12px;width:12px;}
 }
 /* lift the cards off the paper: whiter fill + stronger soft shadow */
 .recipe-card{background:#FFFFFF!important;box-shadow:0 2px 4px rgba(75,55,30,.07),0 9px 20px rgba(75,55,30,.10),0 22px 44px rgba(75,55,30,.11)!important;}
