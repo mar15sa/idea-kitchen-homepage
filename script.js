@@ -29,7 +29,7 @@ function initializeArchiveFilters() {
 
     const toolFilterToggle = document.getElementById('tool-filter-toggle');
     const toolFilterDropdown = document.getElementById('tool-filter-dropdown');
-    const toolCheckboxes = document.querySelectorAll('.tool-checkbox');
+    let toolCheckboxes = document.querySelectorAll('.tool-checkbox');
     const allToolsCheckbox = document.getElementById('all-tools-checkbox');
     const selectedToolsPills = document.getElementById('selected-tools-pills');
     const toolFilterLabel = document.getElementById('tool-filter-label');
@@ -37,6 +37,34 @@ function initializeArchiveFilters() {
     if (!difficultyFilter || !timeFilter || !sortSelect) return;
 
     let selectedTools = [];
+    syncToolFilterOptions();
+
+    function syncToolFilterOptions() {
+        if (!toolFilterDropdown) return;
+
+        const knownTools = new Set(Array.from(toolCheckboxes).map(cb => cb.value));
+        const cardTools = new Set();
+
+        document.querySelectorAll('.recipe-card').forEach(card => {
+            (card.getAttribute('data-tools') || '')
+                .split(',')
+                .map(tool => tool.trim())
+                .filter(Boolean)
+                .forEach(tool => cardTools.add(tool));
+        });
+
+        Array.from(cardTools)
+            .filter(tool => !knownTools.has(tool))
+            .sort((a, b) => a.localeCompare(b))
+            .forEach(tool => {
+                const label = document.createElement('label');
+                label.className = 'tool-checkbox-label';
+                label.innerHTML = `<input type="checkbox" value="${tool}" class="tool-checkbox"><span>${tool}</span>`;
+                toolFilterDropdown.appendChild(label);
+            });
+
+        toolCheckboxes = document.querySelectorAll('.tool-checkbox');
+    }
 
     if (toolFilterToggle) {
         toolFilterToggle.addEventListener('click', (e) => {
