@@ -16,4 +16,8 @@
     <loc>https://ideakitchen.ai/ik-expense-template.html</loc>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://ideakitchen.ai/privacy.html</loc>
+    <priority>0.3</priority>
+  </url>
 </urlset>
