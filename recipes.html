@@ -3,14 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9K29L4FMQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-W9K29L4FMQ');
-</script>
+<script src="analytics.js"></script>
 <title>Idea Kitchen — AI Recipes for Busy Professionals</title>
 <meta name="description" content="Browse all AI recipes from Idea Kitchen — simple, 5-minute shortcuts for busy professionals. No jargon, just shortcuts that stick to the ribs.">
     <meta property="og:title" content="The Recipe Box - Idea Kitchen">
@@ -234,25 +227,106 @@ select.filter-select{
 @media(max-width:600px){
   .book-inner{padding:2.5rem 1.5rem 2rem 1.75rem;}
   .archive-controls{flex-direction:column;align-items:stretch;gap:1rem;}
-  .filter-group{width:100%;}
   .filter-select,.tool-filter-toggle{width:100%;}
-  .tool-filter-wrapper{width:100%;}
   .tool-filter-dropdown{width:100%;}
   .recipe-grid{grid-template-columns:1fr;}
-  /* let the index card grow with its content instead of forcing the 5:3
-     ratio (which widens the card past the screen on a single column) */
-  .recipe-card{aspect-ratio:auto;min-width:0;}
-  /* Keep the tool stamp in the bottom-right corner, but shrink it so it
-     stays on the same line as "Read the recipe" without overlapping on
-     longer tool names (e.g. NotebookLM / Perplexity). */
-  .tool-stamp{padding:2px 6px;gap:3px;height:auto;}
-  .tool-stamp .tool-name{font-size:.52rem;letter-spacing:.2px;}
-  .tool-stamp img{height:12px;width:12px;}
 }
 /* lift the cards off the paper: whiter fill + stronger soft shadow */
 .recipe-card{background:#FFFFFF!important;box-shadow:0 2px 4px rgba(75,55,30,.07),0 9px 20px rgba(75,55,30,.10),0 22px 44px rgba(75,55,30,.11)!important;}
 .recipe-card:hover{box-shadow:0 4px 8px rgba(75,55,30,.11),0 16px 30px rgba(75,55,30,.15),0 30px 56px rgba(75,55,30,.15)!important;}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ideakitchen.ai/#organization",
+      "name": "Idea Kitchen",
+      "alternateName": "Idea Kitchen by Marissa Goldberg",
+      "url": "https://ideakitchen.ai/",
+      "description": "Idea Kitchen turns AI overwhelm into simple, practical recipes for busy professionals. Learn one useful shortcut at a time, no jargon required.",
+      "slogan": "Simple recipes for everyday AI, made for humans.",
+      "logo": { "@type": "ImageObject", "url": "https://ideakitchen.ai/favicon.svg" },
+      "image": "https://ideakitchen.ai/social-preview.png",
+      "founder": { "@id": "https://ideakitchen.ai/#marissa" },
+      "sameAs": [
+        "https://ideakitchen.substack.com",
+        "https://x.com/mar15sa"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ideakitchen.ai/#marissa",
+      "name": "Marissa Goldberg",
+      "jobTitle": "Founder",
+      "description": "Founder of Remote Work Prep and Idea Kitchen. Marissa helps professionals work smarter with practical AI workflows and remote-work strategies.",
+      "worksFor": { "@id": "https://ideakitchen.ai/#organization" },
+      "knowsAbout": ["Artificial intelligence", "AI tools", "Remote work", "Future of work", "Productivity"],
+      "sameAs": [
+        "https://remoteworkprep.com",
+        "https://x.com/mar15sa",
+        "https://ideakitchen.substack.com"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ideakitchen.ai/#website",
+      "url": "https://ideakitchen.ai/",
+      "name": "Idea Kitchen",
+      "description": "Simple recipes for everyday AI, made for humans.",
+      "publisher": { "@id": "https://ideakitchen.ai/#organization" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://ideakitchen.ai/recipes.html",
+      "url": "https://ideakitchen.ai/recipes.html",
+      "name": "The Recipe Box — Idea Kitchen",
+      "description": "Browse all AI recipes from Idea Kitchen — simple, practical shortcuts for busy professionals, filterable by tool, difficulty, and prep time.",
+      "isPartOf": { "@id": "https://ideakitchen.ai/#website" },
+      "about": { "@id": "https://ideakitchen.ai/#organization" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "AI Recipes",
+        "numberOfItems": 30,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "How to Use AI for Good", "url": "https://ideakitchen.substack.com/p/ai-recipe-how-to-use-ai-for-good" },
+          { "@type": "ListItem", "position": 2, "name": "Effortless Meeting Prep", "url": "https://ideakitchen.substack.com/p/ai-recipe-effortless-meeting-prep" },
+          { "@type": "ListItem", "position": 3, "name": "Daily Mind Dump for Mental Clarity", "url": "https://ideakitchen.substack.com/p/ai-recipe-daily-mind-dump-for-mental" },
+          { "@type": "ListItem", "position": 4, "name": "Your First AI Bot Assistant", "url": "https://ideakitchen.substack.com/p/ai-recipe-your-first-ai-bot-assistant" },
+          { "@type": "ListItem", "position": 5, "name": "Shop Smarter with AI", "url": "https://ideakitchen.substack.com/p/ai-recipe-shop-smarter" },
+          { "@type": "ListItem", "position": 6, "name": "Keep Up with Industry Trends Easily", "url": "https://ideakitchen.substack.com/p/ai-recipe-learn-something-new-every" },
+          { "@type": "ListItem", "position": 7, "name": "Upgrade Your Zoom Background", "url": "https://ideakitchen.substack.com/p/ai-recipe-upgrade-your-zoom-background" },
+          { "@type": "ListItem", "position": 8, "name": "Turn Experts into Mentors", "url": "https://ideakitchen.substack.com/p/ai-recipe-turn-experts-into-mentors" },
+          { "@type": "ListItem", "position": 9, "name": "Instant Answers for \"What Should I Eat?\"", "url": "https://ideakitchen.substack.com/p/ai-recipe-instant-answers-for-what" },
+          { "@type": "ListItem", "position": 10, "name": "Discover Your Hogwarts House", "url": "https://ideakitchen.substack.com/p/ai-recipe-discover-your-hogwarts" },
+          { "@type": "ListItem", "position": 11, "name": "Create Your Own Meeting Prep Bot", "url": "https://ideakitchen.substack.com/p/ai-recipe-create-your-own-meeting" },
+          { "@type": "ListItem", "position": 12, "name": "Create Instant SOPs", "url": "https://ideakitchen.substack.com/p/ai-recipe-create-instant-sops-from" },
+          { "@type": "ListItem", "position": 13, "name": "From Stuck to Decided", "url": "https://ideakitchen.substack.com/p/ai-recipe-from-stuck-to-decided" },
+          { "@type": "ListItem", "position": 14, "name": "Your First AI Chatbot", "url": "https://ideakitchen.substack.com/p/ai-recipe-your-first-ai-chatbot-in" },
+          { "@type": "ListItem", "position": 15, "name": "The Perfect Response Every Time", "url": "https://ideakitchen.substack.com/p/ai-recipe-the-perfect-response-every" },
+          { "@type": "ListItem", "position": 16, "name": "Quick Add Events from Anywhere", "url": "https://ideakitchen.substack.com/p/ai-recipe-quick-add-events-from-any" },
+          { "@type": "ListItem", "position": 17, "name": "Log Team Decisions", "url": "https://ideakitchen.substack.com/p/ai-recipe-log-team-decisions-from" },
+          { "@type": "ListItem", "position": 18, "name": "Build a Personal Health Coach", "url": "https://ideakitchen.substack.com/p/ai-recipe-build-a-personal-health" },
+          { "@type": "ListItem", "position": 19, "name": "From PDF to Video in Under 10 Minutes", "url": "https://ideakitchen.substack.com/p/ai-recipe-from-pdf-to-video-in-under" },
+          { "@type": "ListItem", "position": 20, "name": "Personal Storybooks Made Simple", "url": "https://ideakitchen.substack.com/p/ai-recipe-personal-storybooks-made" },
+          { "@type": "ListItem", "position": 21, "name": "From Doc to Slide Deck", "url": "https://ideakitchen.substack.com/p/ai-recipe-from-doc-to-slide-deck" },
+          { "@type": "ListItem", "position": 22, "name": "From Selfie to Studio Headshot", "url": "https://ideakitchen.substack.com/p/from-selfie-to-studio-headshot" },
+          { "@type": "ListItem", "position": 23, "name": "Vibe Code a Full Website", "url": "https://ideakitchen.substack.com/p/how-to-vibe-code-a-full-website-with" },
+          { "@type": "ListItem", "position": 24, "name": "Find the Perfect Dupe", "url": "https://ideakitchen.substack.com/p/ai-recipe-find-the-perfect-dupe-for" },
+          { "@type": "ListItem", "position": 25, "name": "Prep for Interviews Out Loud", "url": "https://ideakitchen.substack.com/p/ai-recipe-prep-for-interviews-out" },
+          { "@type": "ListItem", "position": 26, "name": "Catch Up After Vacation", "url": "https://ideakitchen.substack.com/p/ai-recipe-catch-up-after-vacation" },
+          { "@type": "ListItem", "position": 27, "name": "Build Your Personal Meal Planning Assistant", "url": "https://ideakitchen.substack.com/p/ai-recipe-build-your-personal-meal" },
+          { "@type": "ListItem", "position": 28, "name": "Stop Paying for Stuff You Don't Use", "url": "https://ideakitchen.substack.com/p/ai-recipe-stop-paying-for-stuff-you" },
+          { "@type": "ListItem", "position": 29, "name": "Wake Up to a Clean Inbox", "url": "https://ideakitchen.substack.com/p/ai-recipe-wake-up-to-a-clean-inbox" },
+          { "@type": "ListItem", "position": 30, "name": "From 10 Tabs to One Live Dashboard", "url": "https://ideakitchen.substack.com/p/ai-recipe-from-10-tabs-to-one-live" }
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -893,8 +967,6 @@ select.filter-select{
         <a href="https://ideakitchen.substack.com" target="_blank" rel="noopener">Read on Substack</a>
         <span>•</span>
         <a href="https://ideakitchen.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a>
-        <span>•</span>
-        <a href="privacy.html">Privacy</a>
       </nav>
       <p class="copyright">© 2026 Idea Kitchen.</p>
     </div>

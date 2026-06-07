@@ -3,37 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9K29L4FMQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-W9K29L4FMQ');
-
-  document.addEventListener('click', function(event) {
-    var link = event.target.closest('a[href]');
-    if (!link) return;
-
-    var href = link.getAttribute('href') || '';
-    var text = (link.textContent || '').trim().slice(0, 80);
-    var url = new URL(href, window.location.href);
-    var params = {
-      link_text: text,
-      link_url: url.href,
-      page_path: window.location.pathname,
-      transport_type: 'beacon'
-    };
-
-    if (url.href.indexOf('ideakitchen.substack.com/subscribe') !== -1 || /subscribe/i.test(text)) {
-      gtag('event', 'subscribe_click', params);
-    }
-
-    if (url.hostname.endsWith('substack.com')) {
-      gtag('event', 'substack_click', params);
-    }
-  });
-</script>
+<script src="analytics.js"></script>
 <title>Idea Kitchen — Simple Recipes for Everyday AI</title>
 <meta name="description" content="Idea Kitchen turns AI overwhelm into simple, practical recipes for busy professionals. Learn one useful shortcut at a time, no jargon required.">
 <meta property="og:title" content="Idea Kitchen - Simple Recipes for Everyday AI">
@@ -301,6 +271,52 @@ body{
 }
 
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ideakitchen.ai/#organization",
+      "name": "Idea Kitchen",
+      "alternateName": "Idea Kitchen by Marissa Goldberg",
+      "url": "https://ideakitchen.ai/",
+      "description": "Idea Kitchen turns AI overwhelm into simple, practical recipes for busy professionals. Learn one useful shortcut at a time, no jargon required.",
+      "slogan": "Simple recipes for everyday AI, made for humans.",
+      "logo": { "@type": "ImageObject", "url": "https://ideakitchen.ai/favicon.svg" },
+      "image": "https://ideakitchen.ai/social-preview.png",
+      "founder": { "@id": "https://ideakitchen.ai/#marissa" },
+      "sameAs": [
+        "https://ideakitchen.substack.com",
+        "https://x.com/mar15sa"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ideakitchen.ai/#marissa",
+      "name": "Marissa Goldberg",
+      "jobTitle": "Founder",
+      "description": "Founder of Remote Work Prep and Idea Kitchen. Marissa helps professionals work smarter with practical AI workflows and remote-work strategies.",
+      "worksFor": { "@id": "https://ideakitchen.ai/#organization" },
+      "knowsAbout": ["Artificial intelligence", "AI tools", "Remote work", "Future of work", "Productivity"],
+      "sameAs": [
+        "https://remoteworkprep.com",
+        "https://x.com/mar15sa",
+        "https://ideakitchen.substack.com"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ideakitchen.ai/#website",
+      "url": "https://ideakitchen.ai/",
+      "name": "Idea Kitchen",
+      "description": "Simple recipes for everyday AI, made for humans.",
+      "publisher": { "@id": "https://ideakitchen.ai/#organization" },
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -378,13 +394,13 @@ body{
 
     <!-- Subscribe -->
     <div class="subscribe-section">
-      <h2>Get simple recipes for everyday life</h2>
+      <h2>Get the next recipe</h2>
       <p>Learn practical ways to use AI, one idea at a time. Join 1,000+ readers.</p>
       <a href="https://ideakitchen.substack.com/subscribe" target="_blank" rel="noopener" style="display:inline-block;font-family:'Special Elite',monospace;font-size:.95rem;padding:.8rem 2.2rem;background:#A0522D;color:#FFF8F0;text-decoration:none;border-radius:3px;margin-bottom:.7rem;">Subscribe →</a>
       <p class="sub-note">Free. Unsubscribe whenever.</p>
     </div>
 
-    <p class="page-num">·</p>
+    <p class="page-num">i</p>
 
   </div>
 </div>
@@ -398,8 +414,6 @@ body{
         <a href="https://ideakitchen.substack.com" target="_blank" rel="noopener">Read on Substack</a>
         <span>•</span>
         <a href="https://ideakitchen.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a>
-        <span>•</span>
-        <a href="privacy.html">Privacy</a>
       </nav>
       <p class="copyright">© 2026 Idea Kitchen.</p>
     </div>
