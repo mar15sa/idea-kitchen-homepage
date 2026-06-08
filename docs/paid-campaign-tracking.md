@@ -22,6 +22,14 @@ Example:
 https://ideakitchen.ai/services.html?utm_source=meta&utm_medium=paid_social&utm_campaign=chef_membership_test&utm_id=123&utm_content=short_recipe_ad&utm_term=busy_professionals&utm_source_platform=Meta
 ```
 
+The website stores these campaign parameters for the current browser session and appends them to outbound Substack links. This lets Substack's GA4 integration receive the same campaign labels when someone completes a free or paid subscription on Substack.
+
+Outbound Substack links also receive:
+
+- `ik_offer_type`
+- `ik_offer_name`
+- `ik_referrer_path`
+
 ## GA Events To Watch
 
 - `subscription_interest`: someone clicked toward a specific subscription offer.
@@ -76,6 +84,8 @@ Track these by campaign, ad set, and ad:
 
 ## Current Limitation
 
-The website can measure click intent. Confirmed Substack subscriber type and confirmed paid conversion still need to come from Substack/Stripe export, Substack analytics, or a server-side handoff if Substack supports it.
+The website can measure click intent. Substack's GA4 integration is the primary confirmed source for signups and paid subscriptions, but those confirmed events may take up to 24 hours to appear in GA.
+
+For exact CAC, reconcile ad spend against confirmed Substack paid subscribers from GA/Substack subscriber exports. Substack exports can include subscription type, revenue, and source fields. This is the cleanest practical source of truth unless checkout moves to a first-party Stripe flow we control.
 
 For Meta optimization, add the Meta Pixel ID and ideally Conversions API before meaningful spend. Without that, Meta can see ad clicks, but it cannot reliably learn which people became leads or subscribers.

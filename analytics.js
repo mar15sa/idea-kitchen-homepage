@@ -1,4 +1,16 @@
 const IDEA_KITCHEN_GA_ID = 'G-W9K29L4FMQ';
+const IDEA_KITCHEN_CAMPAIGN_STORAGE_KEY = 'ideaKitchenCampaignParams';
+const IDEA_KITCHEN_CAMPAIGN_PARAMS = [
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'utm_id',
+  'utm_content',
+  'utm_term',
+  'utm_source_platform',
+  'fbclid',
+  'gclid'
+];
 
 window.dataLayer = window.dataLayer || [];
 window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
@@ -17,6 +29,24 @@ window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); 
   if (!hasConfig) {
     window.gtag('js', new Date());
     window.gtag('config', IDEA_KITCHEN_GA_ID);
+  }
+})();
+
+(function storeCampaignParams() {
+  const params = new URLSearchParams(window.location.search);
+  const campaignParams = {};
+
+  IDEA_KITCHEN_CAMPAIGN_PARAMS.forEach(name => {
+    const value = params.get(name);
+    if (value) campaignParams[name] = value;
+  });
+
+  if (!Object.keys(campaignParams).length) return;
+
+  try {
+    sessionStorage.setItem(IDEA_KITCHEN_CAMPAIGN_STORAGE_KEY, JSON.stringify(campaignParams));
+  } catch (error) {
+    window.__ideaKitchenCampaignParams = campaignParams;
   }
 })();
 
@@ -60,6 +90,45 @@ function buildClickParams(target, url) {
     link_url: url ? url.href : '',
     page_title: document.title
   };
+}
+
+function getStoredCampaignParams() {
+  try {
+    const stored = sessionStorage.getItem(IDEA_KITCHEN_CAMPAIGN_STORAGE_KEY);
+    return stored ? JSON.parse(stored) : {};
+  } catch (error) {
+    return window.__ideaKitchenCampaignParams || {};
+  }
+}
+
+function getOfferQueryParams(subscriptionDetails = {}) {
+  const offerParams = {};
+
+  if (subscriptionDetails.offer_type) offerParams.ik_offer_type = subscriptionDetails.offer_type;
+  if (subscriptionDetails.offer_name) offerParams.ik_offer_name = slugify(subscriptionDetails.offer_name);
+
+  offerParams.ik_referrer_path = window.location.pathname;
+
+  return offerParams;
+}
+
+function decorateSubstackUrl(url, extraParams = {}) {
+  if (!url || !url.hostname.endsWith('substack.com')) return url;
+
+  const decoratedUrl = new URL(url.href);
+  const campaignParams = getStoredCampaignParams();
+  const passthroughParams = {
+    ...campaignParams,
+    ...extraParams
+  };
+
+  Object.entries(passthroughParams).forEach(([key, value]) => {
+    if (value && !decoratedUrl.searchParams.has(key)) {
+      decoratedUrl.searchParams.set(key, value);
+    }
+  });
+
+  return decoratedUrl;
 }
 
 function slugify(value) {
@@ -181,17 +250,26 @@ function buildRecipeDetails(link) {
     if (!link) return;
 
     const href = link.getAttribute('href') || '';
-    const url = new URL(href, window.location.href);
+    let url = new URL(href, window.location.href);
+    const subscriptionDetails = (url.href.includes('ideakitchen.substack.com/subscribe') || /subscribe|become a chef|get started/i.test((link.textContent || '')))
+      ? inferSubscriptionDetails(link, url, (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80))
+      : {};
+
+    if (url.hostname.endsWith('substack.com')) {
+      url = decorateSubstackUrl(url, getOfferQueryParams(subscriptionDetails));
+      link.setAttribute('href', url.href);
+    }
+
     const params = buildClickParams(link, url);
-    const text = params.link_text;
+    const decoratedText = params.link_text;
     const isSubstackLink = url.hostname.endsWith('substack.com');
 
     if (link.closest('.recipe-card') || link.classList.contains('recipe-link') || url.href.includes('ideakitchen.substack.com/p/')) {
       sendIdeaKitchenEvent('recipe_click', { ...params, ...buildRecipeDetails(link) });
     }
 
-    if (url.href.includes('ideakitchen.substack.com/subscribe') || /subscribe|become a chef|get started/i.test(text)) {
-      const subscriptionParams = { ...params, ...inferSubscriptionDetails(link, url, text) };
+    if (url.href.includes('ideakitchen.substack.com/subscribe') || /subscribe|become a chef|get started/i.test(decoratedText)) {
+      const subscriptionParams = { ...params, ...subscriptionDetails };
       sendIdeaKitchenEvent('subscribe_click', subscriptionParams);
       sendIdeaKitchenEvent('subscription_interest', subscriptionParams);
     }
@@ -202,7 +280,7 @@ function buildRecipeDetails(link) {
       url.pathname.endsWith('/services.html') ||
       url.protocol === 'mailto:'
     ) {
-      const serviceParams = { ...params, ...inferServiceDetails(link, url, text) };
+      const serviceParams = { ...params, ...inferServiceDetails(link, url, decoratedText) };
       sendIdeaKitchenEvent('services_click', serviceParams);
       if (url.protocol === 'mailto:') {
         sendIdeaKitchenEvent('service_inquiry_click', serviceParams);
