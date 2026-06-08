@@ -1,321 +1,54 @@
-const IDEA_KITCHEN_GA_ID = 'G-W9K29L4FMQ';
-const IDEA_KITCHEN_CAMPAIGN_STORAGE_KEY = 'ideaKitchenCampaignParams';
-const IDEA_KITCHEN_CAMPAIGN_PARAMS = [
-  'utm_source',
-  'utm_medium',
-  'utm_campaign',
-  'utm_id',
-  'utm_content',
-  'utm_term',
-  'utm_source_platform',
-  'fbclid',
-  'gclid'
-];
+const GA_MEASUREMENT_ID = 'G-W9K29L4FMQ';
 
 window.dataLayer = window.dataLayer || [];
-window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
+function gtag(){dataLayer.push(arguments);}
 
-(function initializeGoogleAnalytics() {
-  const hasTag = document.querySelector(`script[src*="${IDEA_KITCHEN_GA_ID}"]`);
-  const hasConfig = window.dataLayer.some(item => item && item[0] === 'config' && item[1] === IDEA_KITCHEN_GA_ID);
+gtag('js', new Date());
+gtag('config', GA_MEASUREMENT_ID);
 
-  if (!hasTag) {
+(function loadGoogleTag() {
+    if (document.querySelector(`script[src*="${GA_MEASUREMENT_ID}"]`)) return;
+
     const script = document.createElement('script');
     script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${IDEA_KITCHEN_GA_ID}`;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
     document.head.appendChild(script);
-  }
-
-  if (!hasConfig) {
-    window.gtag('js', new Date());
-    window.gtag('config', IDEA_KITCHEN_GA_ID);
-  }
 })();
 
-(function storeCampaignParams() {
-  const params = new URLSearchParams(window.location.search);
-  const campaignParams = {};
-
-  IDEA_KITCHEN_CAMPAIGN_PARAMS.forEach(name => {
-    const value = params.get(name);
-    if (value) campaignParams[name] = value;
-  });
-
-  const fbp = getCookieValue('_fbp');
-  const fbc = getCookieValue('_fbc');
-  const fbclid = campaignParams.fbclid;
-
-  if (fbp) campaignParams.ik_fbp = fbp;
-  if (fbc) campaignParams.ik_fbc = fbc;
-  if (!fbc && fbclid) campaignParams.ik_fbc = `fb.1.${Date.now()}.${fbclid}`;
-  campaignParams.ik_landing_path = window.location.pathname;
-
-  if (!Object.keys(campaignParams).length) return;
-
-  try {
-    sessionStorage.setItem(IDEA_KITCHEN_CAMPAIGN_STORAGE_KEY, JSON.stringify(campaignParams));
-  } catch (error) {
-    window.__ideaKitchenCampaignParams = campaignParams;
-  }
-})();
-
-function getCookieValue(name) {
-  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
-  return match ? decodeURIComponent(match[1]) : '';
+function sendAnalyticsEvent(eventName, params = {}) {
+    if (typeof gtag !== 'function') return;
+    gtag('event', eventName, {
+        transport_type: 'beacon',
+        ...params
+    });
 }
 
-function sendIdeaKitchenEvent(eventName, params = {}) {
-  if (typeof window.gtag !== 'function') return;
-
-  const eventParams = {
-    transport_type: 'beacon',
-    page_path: window.location.pathname,
-    ...params
-  };
-
-  window.gtag('event', eventName, eventParams);
-  sendMetaEvent(eventName, eventParams);
-}
-
-function sendMetaEvent(eventName, params = {}) {
-  if (typeof window.fbq !== 'function') return;
-
-  const leadEvents = ['subscribe_click', 'subscription_interest', 'service_inquiry_click', 'waitlist_click', 'waitlist_submit'];
-  const metaParams = {
-    content_name: params.offer_name || params.service_name || params.link_text || eventName,
-    content_category: params.offer_type || params.service_type || params.click_type || eventName,
-    value: params.value,
-    currency: params.currency
-  };
-
-  if (leadEvents.includes(eventName)) {
-    window.fbq('track', 'Lead', metaParams);
-    return;
-  }
-
-  if (eventName === 'recipe_click') {
-    window.fbq('trackCustom', 'RecipeClick', metaParams);
-  }
-}
-
-function buildClickParams(target, url) {
-  return {
-    link_text: (target.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80),
-    link_url: url ? url.href : '',
-    page_title: document.title
-  };
-}
-
-function getStoredCampaignParams() {
-  try {
-    const stored = sessionStorage.getItem(IDEA_KITCHEN_CAMPAIGN_STORAGE_KEY);
-    return stored ? JSON.parse(stored) : {};
-  } catch (error) {
-    return window.__ideaKitchenCampaignParams || {};
-  }
-}
-
-function getOfferQueryParams(subscriptionDetails = {}) {
-  const offerParams = {};
-
-  if (subscriptionDetails.offer_type) offerParams.ik_offer_type = subscriptionDetails.offer_type;
-  if (subscriptionDetails.offer_name) offerParams.ik_offer_name = slugify(subscriptionDetails.offer_name);
-
-  offerParams.ik_referrer_path = window.location.pathname;
-
-  return offerParams;
-}
-
-function decorateSubstackUrl(url, extraParams = {}) {
-  if (!url || !url.hostname.endsWith('substack.com')) return url;
-
-  const decoratedUrl = new URL(url.href);
-  const campaignParams = getStoredCampaignParams();
-  const passthroughParams = {
-    ...campaignParams,
-    ...extraParams
-  };
-
-  Object.entries(passthroughParams).forEach(([key, value]) => {
-    if (value && !decoratedUrl.searchParams.has(key)) {
-      decoratedUrl.searchParams.set(key, value);
-    }
-  });
-
-  return decoratedUrl;
-}
-
-function slugify(value) {
-  return (value || '')
-    .toLowerCase()
-    .replace(/['’]/g, '')
-    .replace(/[^a-z0-9]+/g, '_')
-    .replace(/^_+|_+$/g, '');
-}
-
-function getOfferingName(target) {
-  const card = target.closest('.offering-card');
-  const heading = card ? card.querySelector('h3') : null;
-  return heading ? heading.textContent.trim() : '';
-}
-
-function getMailSubject(url) {
-  if (!url || url.protocol !== 'mailto:') return '';
-  return (url.searchParams.get('subject') || '').trim();
-}
-
-function inferSubscriptionDetails(link, url, text) {
-  const offeringName = getOfferingName(link);
-  const normalizedText = `${text} ${offeringName}`.toLowerCase();
-  let offerType = 'free_newsletter';
-  let offerName = 'Newsletter';
-  let value = 0;
-
-  if (url.searchParams.get('group') === 'true') {
-    offerType = 'team_membership';
-    offerName = 'Team Membership';
-    value = 129;
-  } else if (normalizedText.includes('chef') && !normalizedText.includes('selection')) {
-    offerType = 'chef_membership';
-    offerName = 'Chef Membership';
-    value = 149;
-  } else if (normalizedText.includes('selection')) {
-    offerType = 'chefs_selection';
-    offerName = "Chef's Selection";
-    value = 349;
-  }
-
-  return {
-    offer_type: offerType,
-    offer_name: offerName,
-    value,
-    currency: 'USD'
-  };
-}
-
-function inferServiceDetails(link, url, text) {
-  const subject = getMailSubject(url);
-  const offeringName = getOfferingName(link);
-  const source = `${subject} ${offeringName} ${text}`.toLowerCase();
-  let serviceName = offeringName || text || subject || 'Service CTA';
-  let serviceType = slugify(serviceName) || 'service_cta';
-  let value;
-
-  const services = [
-    ['team ai assessment', 'team_ai_assessment', 'Team AI Assessment', 7500],
-    ['monthly ai update', 'monthly_ai_update', 'Monthly AI Update', 5000],
-    ['group ai coaching', 'group_ai_coaching', 'Group AI Coaching', 4950],
-    ['builder in residence', 'builder_in_residence', 'Builder in Residence', 7500],
-    ['ai coaching session', 'ai_coaching_session', 'AI coaching session'],
-    ['help me choose', 'help_me_choose', 'Help me choose'],
-    ['expense question', 'expense_question', 'Expense question']
-  ];
-
-  const match = services.find(([needle]) => source.includes(needle));
-  if (match) {
-    serviceType = match[1];
-    serviceName = match[2];
-    value = match[3];
-  }
-
-  return {
-    service_type: serviceType,
-    service_name: serviceName,
-    inquiry_subject: subject,
-    value,
-    currency: value ? 'USD' : undefined
-  };
-}
-
-function buildRecipeDetails(link) {
-  const card = link.closest('.recipe-card');
-  if (!card) return {};
-
-  const title = card.querySelector('.recipe-title') ? card.querySelector('.recipe-title').textContent.trim() : '';
-  return {
-    recipe_title: title,
-    recipe_slug: slugify(title),
-    recipe_tools: card.getAttribute('data-tools') || '',
-    recipe_difficulty: card.getAttribute('data-difficulty') || '',
-    recipe_time: card.getAttribute('data-time') || ''
-  };
-}
-
-(function bindIdeaKitchenClickTracking() {
-  if (window.__ideaKitchenAnalyticsEventsBound) return;
-  window.__ideaKitchenAnalyticsEventsBound = true;
-
-  document.addEventListener('click', event => {
-    const waitlistButton = event.target.closest('[data-waitlist-open]');
-    if (waitlistButton) {
-      const params = {
-        ...buildClickParams(waitlistButton),
-        offer_type: 'chefs_selection_waitlist',
-        offer_name: "Chef's Selection",
-        value: 349,
-        currency: 'USD'
-      };
-      sendIdeaKitchenEvent('services_click', { ...params, click_type: 'waitlist_open' });
-      sendIdeaKitchenEvent('waitlist_click', params);
-      return;
-    }
-
+document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href]');
     if (!link) return;
 
     const href = link.getAttribute('href') || '';
-    let url = new URL(href, window.location.href);
-    const subscriptionDetails = (url.href.includes('ideakitchen.substack.com/subscribe') || /subscribe|become a chef|get started/i.test((link.textContent || '')))
-      ? inferSubscriptionDetails(link, url, (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80))
-      : {};
+    const text = (link.textContent || '').trim().slice(0, 80);
+    const url = new URL(href, window.location.href);
+    const params = {
+        link_text: text,
+        link_url: url.href,
+        page_path: window.location.pathname
+    };
+
+    if (link.classList.contains('recipe-link') || url.href.includes('ideakitchen.substack.com/p/')) {
+        sendAnalyticsEvent('recipe_click', params);
+    }
+
+    if (url.href.includes('ideakitchen.substack.com/subscribe') || /subscribe/i.test(text)) {
+        sendAnalyticsEvent('subscribe_click', params);
+    }
+
+    if (url.pathname.includes('services') || link.classList.contains('service-cta')) {
+        sendAnalyticsEvent('services_click', params);
+    }
 
     if (url.hostname.endsWith('substack.com')) {
-      url = decorateSubstackUrl(url, getOfferQueryParams(subscriptionDetails));
-      link.setAttribute('href', url.href);
+        sendAnalyticsEvent('substack_click', params);
     }
-
-    const params = buildClickParams(link, url);
-    const decoratedText = params.link_text;
-    const isSubstackLink = url.hostname.endsWith('substack.com');
-
-    if (link.closest('.recipe-card') || link.classList.contains('recipe-link') || url.href.includes('ideakitchen.substack.com/p/')) {
-      sendIdeaKitchenEvent('recipe_click', { ...params, ...buildRecipeDetails(link) });
-    }
-
-    if (url.href.includes('ideakitchen.substack.com/subscribe') || /subscribe|become a chef|get started/i.test(decoratedText)) {
-      const subscriptionParams = { ...params, ...subscriptionDetails };
-      sendIdeaKitchenEvent('subscribe_click', subscriptionParams);
-      sendIdeaKitchenEvent('subscription_interest', subscriptionParams);
-    }
-
-    if (
-      (link.classList.contains('svc-btn') && !isSubstackLink) ||
-      link.classList.contains('service-cta') ||
-      url.pathname.endsWith('/services.html') ||
-      url.protocol === 'mailto:'
-    ) {
-      const serviceParams = { ...params, ...inferServiceDetails(link, url, decoratedText) };
-      sendIdeaKitchenEvent('services_click', serviceParams);
-      if (url.protocol === 'mailto:') {
-        sendIdeaKitchenEvent('service_inquiry_click', serviceParams);
-      }
-    }
-
-    if (isSubstackLink) {
-      sendIdeaKitchenEvent('substack_click', params);
-    }
-  });
-
-  document.addEventListener('submit', event => {
-    if (event.target && event.target.id === 'waitlist-form') {
-      sendIdeaKitchenEvent('waitlist_submit', {
-        form_id: 'waitlist-form',
-        page_title: document.title,
-        offer_type: 'chefs_selection_waitlist',
-        offer_name: "Chef's Selection",
-        value: 349,
-        currency: 'USD'
-      });
-    }
-  });
-})();
+});
