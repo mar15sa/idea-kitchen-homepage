@@ -41,6 +41,15 @@ window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); 
     if (value) campaignParams[name] = value;
   });
 
+  const fbp = getCookieValue('_fbp');
+  const fbc = getCookieValue('_fbc');
+  const fbclid = campaignParams.fbclid;
+
+  if (fbp) campaignParams.ik_fbp = fbp;
+  if (fbc) campaignParams.ik_fbc = fbc;
+  if (!fbc && fbclid) campaignParams.ik_fbc = `fb.1.${Date.now()}.${fbclid}`;
+  campaignParams.ik_landing_path = window.location.pathname;
+
   if (!Object.keys(campaignParams).length) return;
 
   try {
@@ -49,6 +58,11 @@ window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); 
     window.__ideaKitchenCampaignParams = campaignParams;
   }
 })();
+
+function getCookieValue(name) {
+  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : '';
+}
 
 function sendIdeaKitchenEvent(eventName, params = {}) {
   if (typeof window.gtag !== 'function') return;
