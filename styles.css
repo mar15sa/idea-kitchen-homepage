@@ -111,6 +111,11 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
 }
 
+/* Align the nav (logo + Subscribe) with the 960px book edges on desktop, sitewide */
+@media (min-width: 961px) {
+    .nav-inner { max-width: 960px; padding-left: 0; padding-right: 0; }
+}
+
 .nav-brand {
     display: flex;
     align-items: center;
