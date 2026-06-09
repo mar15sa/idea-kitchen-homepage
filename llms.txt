@@ -8,7 +8,6 @@ Idea Kitchen is written by Marissa Goldberg, founder of Remote Work Prep. Each "
 - [Home](https://ideakitchen.ai/): What Idea Kitchen is, who it's for, and how to subscribe.
 - [Recipe Box](https://ideakitchen.ai/recipes.html): Browsable, filterable index of all AI recipes (by tool, difficulty, and prep time). Each recipe links to the full step-by-step article on Substack.
 - [Work With Us](https://ideakitchen.ai/services.html): Memberships, team training, AI assessments, group coaching, and 1:1 coaching for individuals and teams. Includes FAQs.
-- [About](https://ideakitchen.ai/about.html): About Idea Kitchen and its author, Marissa Goldberg.
 
 ## Recipes
 The full archive of step-by-step AI recipes is published on Substack: https://ideakitchen.substack.com
