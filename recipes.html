@@ -3,239 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="analytics.js"></script>
-<title>Idea Kitchen — AI Recipes for Busy Professionals</title>
-<meta name="description" content="Browse all AI recipes from Idea Kitchen — simple, 5-minute shortcuts for busy professionals. No jargon, just shortcuts that stick to the ribs.">
-    <meta property="og:title" content="The Recipe Box - Idea Kitchen">
-    <meta property="og:description" content="Browse practical AI recipes from Idea Kitchen, filtered by tool, difficulty, and prep time.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ideakitchen.ai/recipes.html">
-    <meta property="og:image" content="https://ideakitchen.ai/social-preview.png?v=2">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Recipe Box - Idea Kitchen">
-    <meta name="twitter:description" content="Browse practical AI recipes by tool, difficulty, and prep time.">
-    <meta name="twitter:image" content="https://ideakitchen.ai/social-preview.png?v=2">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9K29L4FMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W9K29L4FMQ');
+</script>
+<title>The Recipe Box — Idea Kitchen</title>
+<meta name="description" content="Browse all of Idea Kitchen's simple, no-jargon AI recipes for everyday life, organized by what you want to get done. Free, made for humans.">
+<meta property="og:title" content="The Recipe Box - Idea Kitchen">
+<meta property="og:description" content="Simple recipes for everyday AI, made for humans. Browse by what you want to get done.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ideakitchen.ai/recipes.html">
+<meta property="og:image" content="https://ideakitchen.ai/social-preview.png?v=2">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Recipe Box - Idea Kitchen">
+<meta name="twitter:description" content="Simple recipes for everyday AI, made for humans.">
+<meta name="twitter:image" content="https://ideakitchen.ai/social-preview.png?v=2">
 <link rel="canonical" href="https://ideakitchen.ai/recipes.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Homemade+Apple&family=Nanum+Pen+Script&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=14">
-<style>
-/* ===== Book design system (cloned verbatim from the home page) ===== */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Source Serif 4',Georgia,serif;
-  background:#FFFDF7;
-  color:#1A1A1A;
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-}
-.book{
-  background:none;box-shadow:none;max-width:1120px;margin:0 auto;min-height:auto;
-  position:relative;
-}
-.book::before{display:none;}
-.book-inner{padding:4rem 2.5rem 3rem 2.5rem;}
-
-.title-section{text-align:center;padding-bottom:3rem;border-bottom:1px solid rgba(138,130,110,.25);margin-bottom:3rem;}
-.title-kicker{font-family:'Special Elite',monospace;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:#8B9E7C;margin-bottom:1.5rem;}
-.title-name{font-family:'Special Elite',monospace;font-size:clamp(2.5rem,5vw,3.5rem);color:#1A1A1A;line-height:1.1;margin-bottom:.8rem;}
-.title-tagline{font-size:1.15rem;color:#4A2040;}
-.title-rule{width:40px;border-top:1px solid rgba(138,130,110,.4);margin:1.5rem auto 0;}
-.section-rule{max-width:480px;border-top:1px solid rgba(138,130,110,.25);margin:3rem auto;}
-
-/* ===== About content, in the book's voice ===== */
-.bk-section{max-width:620px;margin:0 auto;}
-.bk-head{font-family:'Special Elite',monospace;font-size:1.3rem;color:#4A2040;letter-spacing:.5px;text-align:center;margin-bottom:1.3rem;}
-.bk-prose p{font-size:1.05rem;line-height:1.85;margin-bottom:1.15rem;color:#2A2622;}
-.bk-prose p:last-child{margin-bottom:0;}
-.bk-prose strong{color:#4A2040;font-weight:600;}
-.bk-prose em{color:#4A2040;}
-.bk-prose a{color:#A0522D;text-decoration:none;border-bottom:1px solid rgba(160,82,45,.4);transition:border-color .2s;}
-.bk-prose a:hover{border-bottom-color:#A0522D;}
-.bk-pullquote{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:1.4rem;line-height:1.5;color:#4A2040;text-align:center;max-width:520px;margin:1.8rem auto 0;}
-.bk-list{list-style:none;max-width:560px;margin:.3rem auto 0;}
-.bk-list li{position:relative;padding:.55rem 0 .55rem 1.4rem;font-size:1.02rem;line-height:1.6;color:#2A2622;border-bottom:1px dotted rgba(138,130,110,.35);}
-.bk-list li:last-child{border-bottom:none;}
-.bk-list li::before{content:'';position:absolute;left:.2rem;top:1.1rem;width:5px;height:5px;border-radius:50%;background:#8B9E7C;}
-.bk-list strong{color:#4A2040;font-weight:600;}
-.bk-sign{font-family:'Nanum Pen Script',cursive;font-size:1.5rem;color:#A0522D;text-align:right;max-width:620px;margin:1.3rem auto 0;}
-
-/* Subscribe / CTA (cloned from home) */
-.subscribe-section{max-width:460px;margin:0 auto;text-align:center;}
-.subscribe-section h2{font-family:'Special Elite',monospace;font-size:1.3rem;color:#4A2040;margin-bottom:.6rem;}
-.subscribe-section p{font-size:.95rem;opacity:.7;margin-bottom:1.5rem;}
-.bk-cta-btn{display:inline-block;font-family:'Special Elite',monospace;font-size:.95rem;padding:.8rem 2.2rem;background:#A0522D;color:#FFF8F0;text-decoration:none;border-radius:3px;}
-.bk-cta-btn:hover{background:#8A4424;}
-.bk-cta-secondary{display:inline-block;font-family:'Special Elite',monospace;font-size:.82rem;color:#4A2040;text-decoration:none;margin-top:1rem;opacity:.75;}
-.bk-cta-secondary:hover{opacity:1;}
-.page-num{text-align:center;font-family:'Source Serif 4',Georgia,serif;font-size:.8rem;color:#1A1A1A;opacity:.3;padding-top:2.5rem;}
-
-/* ===== Recipe-archive additions (cohesive book restyle) ===== */
-/* Widen the counter so two cards fit per row, and tighten side padding */
-.book{max-width:1120px;}
-.book-inner{padding:4rem 2.5rem 3rem 2.5rem;}
-
-/* Archive wrapper — just a container, no flat-cream bg, no grain */
-.recipe-archive{background:transparent;}
-
-/* Filter + sort toolbar */
-.archive-toolbar{margin-bottom:1rem;}
-.archive-controls{
-  display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;
-  gap:1.5rem 1.75rem;
-  padding:1.5rem 0;
-  border-top:1px solid rgba(138,130,110,.4);
-  border-bottom:1px solid rgba(138,130,110,.4);
-}
-.filter-group{display:flex;flex-direction:column;gap:.4rem;}
-.filter-group label{
-  font-family:'Special Elite',monospace;
-  font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;
-  color:#8A826E;
-}
-.filter-select,
-.tool-filter-toggle{
-  font-family:'Special Elite',monospace;
-  font-size:.85rem;color:#4A2040;
-  background:#FFFFFF;
-  border:1px solid rgba(80,60,35,.2);
-  border-radius:5px;
-  padding:.5rem .85rem;
-  cursor:pointer;
-  box-shadow:0 1px 2px rgba(75,55,30,.05),0 4px 10px rgba(75,55,30,.07);
-  transition:border-color .2s,box-shadow .2s;
-  -webkit-appearance:none;appearance:none;
-}
-.filter-select:hover,
-.tool-filter-toggle:hover{border-color:rgba(160,82,45,.55);}
-.filter-select:focus,
-.tool-filter-toggle:focus{
-  outline:none;
-  border-color:#A0522D;
-  box-shadow:0 0 0 3px rgba(160,82,45,.15);
-}
-select.filter-select{
-  padding-right:2rem;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='%234A2040' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;
-  background-position:right .7rem center;
-  background-size:.7rem;
-}
-
-/* Tool multi-select dropdown */
-.tool-filter-wrapper{position:relative;}
-.tool-filter-toggle{display:flex;align-items:center;justify-content:space-between;gap:.6rem;min-width:9rem;}
-.tool-filter-toggle .dropdown-arrow{font-size:.6rem;color:#8A826E;}
-.tool-filter-dropdown{
-  position:absolute;top:calc(100% + .4rem);left:0;z-index:30;
-  min-width:11rem;
-  background:#FFFDF7;
-  border:1px solid rgba(138,130,110,.4);
-  border-radius:6px;
-  box-shadow:0 6px 20px rgba(75,55,30,.18);
-  padding:.5rem;
-}
-.tool-checkbox-label{
-  display:flex;align-items:center;gap:.55rem;
-  font-family:'Source Serif 4',Georgia,serif;
-  font-size:.95rem;color:#2A2622;
-  padding:.4rem .55rem;border-radius:4px;cursor:pointer;
-  transition:background .15s;
-}
-.tool-checkbox-label:hover{background:rgba(138,130,110,.12);}
-.tool-checkbox-label input{accent-color:#A0522D;width:15px;height:15px;cursor:pointer;}
-.all-tools-option{font-family:'Special Elite',monospace;font-size:.8rem;color:#4A2040;}
-.tool-checkbox-divider{height:1px;background:rgba(138,130,110,.3);margin:.35rem .25rem;}
-
-/* Results count */
-.results-count{
-  text-align:center;
-  font-family:'Source Serif 4',Georgia,serif;
-  font-size:.72rem;letter-spacing:.3px;color:rgba(138,130,110,.7);
-  margin-top:1.25rem;
-}
-
-/* Selected tool pills */
-.selected-tools-pills{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;
-  margin-top:1rem;
-}
-.tool-pill{
-  display:inline-flex;align-items:center;gap:.45rem;
-  font-family:'Special Elite',monospace;
-  font-size:.75rem;letter-spacing:.5px;
-  color:#4A2040;
-  background:rgba(160,82,45,.1);
-  border:1px solid rgba(160,82,45,.3);
-  border-radius:999px;
-  padding:.35rem .85rem;
-}
-.tool-pill-remove{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:1.05rem;height:1.05rem;
-  border:none;border-radius:50%;
-  background:rgba(160,82,45,.2);
-  color:#A0522D;font-size:.8rem;line-height:1;cursor:pointer;
-  transition:background .15s;
-}
-.tool-pill-remove:hover{background:rgba(160,82,45,.4);color:#FFF8F0;}
-
-/* Empty state */
-.empty-state{margin-top:2.5rem;display:flex;justify-content:center;}
-.empty-state-content{
-  text-align:center;max-width:380px;
-  background:#FFFFFF;
-  border:1px solid rgba(160,130,80,.25);
-  border-radius:6px;
-  box-shadow:0 1px 2px rgba(75,55,30,.08),0 6px 16px rgba(75,55,30,.1);
-  padding:2.5rem 2rem;
-}
-.empty-state-icon{font-size:2.5rem;margin-bottom:.5rem;}
-.empty-state-title{font-family:'Special Elite',monospace;font-size:1.2rem;color:#4A2040;margin-bottom:.5rem;}
-.empty-state-message{font-size:.95rem;color:#2A2622;opacity:.8;margin-bottom:1.5rem;}
-.clear-filters-btn{
-  font-family:'Special Elite',monospace;font-size:.85rem;
-  background:#A0522D;color:#FFF8F0;
-  border:none;border-radius:3px;
-  padding:.65rem 1.5rem;cursor:pointer;transition:background .2s;
-}
-.clear-filters-btn:hover{background:#8A4424;}
-
-/* Recipe cards: keep the EXISTING index-card design from styles.css
-   (red margin line, paper grain, highlighter "Read the recipe", dashed
-   tool stamp, 5:3 shape, layered shadow). Only the page is aligned. */
-
-/* counter surface: no cream book panel, no spine, no black gap */
-.book{background:none;box-shadow:none;margin:0 auto;min-height:auto;}
-.book::before{display:none;}
-
-/* tighten the header: remove the extra full-width divider + the empty band */
-.title-section{padding-bottom:0;border-bottom:none;margin-bottom:1.5rem;}
-.recipe-archive{padding-top:0;}
-.archive-toolbar{margin-top:.5rem;}
-
-/* kicker handwritten (like the live Recipe Box); tagline a soft serif italic */
-.title-kicker{font-family:'Homemade Apple',cursive;text-transform:none;letter-spacing:0;font-size:1rem;color:#8B9E7C;}
-.title-tagline{font-style:italic;}
-
-/* cards: pure-white fill so they lift on the cream, plus the original
-   typewriter font (not the serif body) */
-.recipe-card{background:#FFFFFF;font-family:'Special Elite','Courier New',monospace;}
-
-@media(max-width:600px){
-  .book-inner{padding:2.5rem 1.5rem 2rem 1.75rem;}
-  .archive-controls{flex-direction:column;align-items:stretch;gap:1rem;}
-  .filter-select,.tool-filter-toggle{width:100%;}
-  .tool-filter-dropdown{width:100%;}
-  .recipe-grid{grid-template-columns:1fr;}
-}
-/* lift the cards off the paper: whiter fill + stronger soft shadow */
-.recipe-card{background:#FFFFFF!important;box-shadow:0 2px 4px rgba(75,55,30,.07),0 9px 20px rgba(75,55,30,.10),0 22px 44px rgba(75,55,30,.11)!important;}
-.recipe-card:hover{box-shadow:0 4px 8px rgba(75,55,30,.11),0 16px 30px rgba(75,55,30,.15),0 30px 56px rgba(75,55,30,.15)!important;}
-</style>
-<!-- RECIPE_SCHEMA_START -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -246,7 +38,7 @@ select.filter-select{
       "name": "Idea Kitchen",
       "alternateName": "Idea Kitchen by Marissa Goldberg",
       "url": "https://ideakitchen.ai/",
-      "description": "Idea Kitchen turns AI overwhelm into simple, practical recipes for busy professionals. Learn one useful shortcut at a time, no jargon required.",
+      "description": "Simple recipes for everyday AI, made for humans.",
       "slogan": "Simple recipes for everyday AI, made for humans.",
       "logo": {
         "@type": "ImageObject",
@@ -266,7 +58,6 @@ select.filter-select{
       "@id": "https://ideakitchen.ai/#marissa",
       "name": "Marissa Goldberg",
       "jobTitle": "Founder",
-      "description": "Founder of Remote Work Prep and Idea Kitchen. Marissa helps professionals work smarter with practical AI workflows and remote-work strategies.",
       "worksFor": {
         "@id": "https://ideakitchen.ai/#organization"
       },
@@ -274,7 +65,6 @@ select.filter-select{
         "Artificial intelligence",
         "AI tools",
         "Remote work",
-        "Future of work",
         "Productivity"
       ],
       "sameAs": [
@@ -299,7 +89,7 @@ select.filter-select{
       "@id": "https://ideakitchen.ai/recipes.html",
       "url": "https://ideakitchen.ai/recipes.html",
       "name": "The Recipe Box — Idea Kitchen",
-      "description": "Browse all AI recipes from Idea Kitchen — simple, practical shortcuts for busy professionals, filterable by tool, difficulty, and prep time.",
+      "description": "Browse all AI recipes from Idea Kitchen, organized by what you want to get done.",
       "isPartOf": {
         "@id": "https://ideakitchen.ai/#website"
       },
@@ -309,259 +99,193 @@ select.filter-select{
       "mainEntity": {
         "@type": "ItemList",
         "name": "AI Recipes",
-        "numberOfItems": 42,
+        "numberOfItems": 31,
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
-            "name": "Not Sure What to Use AI For? Start Here",
-            "url": "https://ideakitchen.substack.com/p/not-sure-what-to-use-ai-for-start"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Type in Your Own Handwriting",
+            "name": "How to Turn Your Handwriting into a Font with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-type-in-your-own-handwriting"
           },
           {
             "@type": "ListItem",
-            "position": 3,
-            "name": "How to Use AI for Good",
+            "position": 2,
+            "name": "How to Use AI to Solve an Everyday Problem",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-how-to-use-ai-for-good"
           },
           {
             "@type": "ListItem",
-            "position": 4,
-            "name": "From 10 Tabs to One Live Dashboard",
+            "position": 3,
+            "name": "How to Build a Daily AI Dashboard from Your Apps",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-from-10-tabs-to-one-live"
           },
           {
             "@type": "ListItem",
-            "position": 5,
-            "name": "The answer to \"how do I keep up with AI?\"",
-            "url": "https://ideakitchen.substack.com/p/the-answer-to-how-do-i-keep-up-with-1c3"
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "name": "Wake Up to a Clean Inbox",
+            "position": 4,
+            "name": "How to Automatically Clean Your Inbox with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-wake-up-to-a-clean-inbox"
           },
           {
             "@type": "ListItem",
-            "position": 7,
-            "name": "Stop Paying for Stuff You Don't Use",
+            "position": 5,
+            "name": "How to Find and Cancel Forgotten Subscriptions with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-stop-paying-for-stuff-you"
           },
           {
             "@type": "ListItem",
-            "position": 8,
-            "name": "Build Your Personal Meal Planning Assistant",
+            "position": 6,
+            "name": "How to Build an AI Meal-Planning Assistant (No Code)",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-build-your-personal-meal"
           },
           {
             "@type": "ListItem",
-            "position": 9,
-            "name": "What’s New for 2026",
-            "url": "https://ideakitchen.substack.com/p/whats-new-for-2026"
-          },
-          {
-            "@type": "ListItem",
-            "position": 10,
-            "name": "Catch Up After Vacation in One Chat",
+            "position": 7,
+            "name": "How to Catch Up on Email After Vacation with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-catch-up-after-vacation"
           },
           {
             "@type": "ListItem",
-            "position": 11,
-            "name": "Cooking with AI (Live!) Recording: Learn 4 New AI Workflows",
-            "url": "https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-58b"
-          },
-          {
-            "@type": "ListItem",
-            "position": 12,
-            "name": "How to Practice for Job Interviews with AI",
+            "position": 8,
+            "name": "How to Practice Job Interviews with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-prep-for-interviews-out"
           },
           {
             "@type": "ListItem",
-            "position": 13,
-            "name": "Find the Perfect Dupe for Your Discontinued Fave",
+            "position": 9,
+            "name": "How to Find a Dupe for a Discontinued Product with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-find-the-perfect-dupe-for"
           },
           {
             "@type": "ListItem",
-            "position": 14,
-            "name": "How to Vibe Code a Full Website (With Auth & Billing)",
+            "position": 10,
+            "name": "How to Build a Website with AI (No Code)",
             "url": "https://ideakitchen.substack.com/p/how-to-vibe-code-a-full-website-with"
           },
           {
             "@type": "ListItem",
-            "position": 15,
-            "name": "From Selfie to Studio Headshot",
+            "position": 11,
+            "name": "How to Turn a Selfie into a Studio Headshot with AI",
             "url": "https://ideakitchen.substack.com/p/from-selfie-to-studio-headshot"
           },
           {
             "@type": "ListItem",
-            "position": 16,
-            "name": "From Doc to Slide Deck (Zero Copy/Pasting Required)",
+            "position": 12,
+            "name": "How to Turn a Document into a Slide Deck with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-from-doc-to-slide-deck"
           },
           {
             "@type": "ListItem",
-            "position": 17,
-            "name": "Personal Storybooks Made Simple",
+            "position": 13,
+            "name": "How to Make a Personalized Storybook with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-personal-storybooks-made"
           },
           {
             "@type": "ListItem",
-            "position": 18,
-            "name": "From PDF to Video in Under 10 Minutes",
+            "position": 14,
+            "name": "How to Turn a PDF into a Video with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-from-pdf-to-video-in-under"
           },
           {
             "@type": "ListItem",
-            "position": 19,
-            "name": "Build a Personal Health Coach",
+            "position": 15,
+            "name": "How to Build a Personal AI Health Coach",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-build-a-personal-health"
           },
           {
             "@type": "ListItem",
-            "position": 20,
-            "name": "Log Team Decisions from Slack to Notion with One Emoji",
+            "position": 16,
+            "name": "How to Auto-Log Slack Decisions to Notion with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-log-team-decisions-from"
           },
           {
             "@type": "ListItem",
-            "position": 21,
-            "name": "How a Product Manager Uses AI to Go From Idea to Prototype",
-            "url": "https://ideakitchen.substack.com/p/how-a-product-manager-uses-ai-to"
-          },
-          {
-            "@type": "ListItem",
-            "position": 22,
-            "name": "Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows",
-            "url": "https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-1a4"
-          },
-          {
-            "@type": "ListItem",
-            "position": 23,
-            "name": "How to Add Events to Your Calendar from a Photo Using AI",
+            "position": 17,
+            "name": "How to Add Calendar Events from a Photo with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-quick-add-events-from-any"
           },
           {
             "@type": "ListItem",
-            "position": 24,
-            "name": "How to Use AI to Write Replies to Hard Messages",
+            "position": 18,
+            "name": "How to Write Replies to Difficult Messages with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-the-perfect-response-every"
           },
           {
             "@type": "ListItem",
-            "position": 25,
-            "name": "Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows",
-            "url": "https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-d7b"
-          },
-          {
-            "@type": "ListItem",
-            "position": 26,
-            "name": "Your First AI Chatbot (in Just 15 Minutes)",
+            "position": 19,
+            "name": "How to Build Your First AI Chatbot (No Code)",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-your-first-ai-chatbot-in"
           },
           {
             "@type": "ListItem",
-            "position": 27,
-            "name": "How to Use AI to Make Hard Decisions",
+            "position": 20,
+            "name": "How to Make a Tough Decision with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-from-stuck-to-decided"
           },
           {
             "@type": "ListItem",
-            "position": 28,
-            "name": "How a Busy Marketer Uses AI to Work Faster (Without Losing Authenticity)",
-            "url": "https://ideakitchen.substack.com/p/how-a-busy-marketer-uses-ai-to-work"
-          },
-          {
-            "@type": "ListItem",
-            "position": 29,
-            "name": "Create Instant SOPs from Meeting Recordings",
+            "position": 21,
+            "name": "How to Turn Meeting Recordings into SOPs with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-create-instant-sops-from"
           },
           {
             "@type": "ListItem",
-            "position": 30,
-            "name": "Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows",
-            "url": "https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-a42"
-          },
-          {
-            "@type": "ListItem",
-            "position": 31,
-            "name": "How to Build an Automated Meeting Prep Bot (Zapier)",
+            "position": 22,
+            "name": "How to Build an Automated Meeting-Prep Bot with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-create-your-own-meeting"
           },
           {
             "@type": "ListItem",
-            "position": 32,
-            "name": "Discover your Hogwarts House",
+            "position": 23,
+            "name": "How to Find Your Hogwarts House with an AI Prompt",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-discover-your-hogwarts"
           },
           {
             "@type": "ListItem",
-            "position": 33,
-            "name": "How to Use AI to Decide What to Eat Tonight",
+            "position": 24,
+            "name": "How to Decide What to Eat Tonight with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-instant-answers-for-what"
           },
           {
             "@type": "ListItem",
-            "position": 34,
+            "position": 25,
             "name": "How to Build an AI FAQ Bot for Your Team (No Code)",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-your-first-ai-bot-assistant"
           },
           {
             "@type": "ListItem",
-            "position": 35,
-            "name": "Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows",
-            "url": "https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn"
-          },
-          {
-            "@type": "ListItem",
-            "position": 36,
-            "name": "Turn Experts Into Mentors",
+            "position": 26,
+            "name": "How to Learn from Any Expert with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-turn-experts-into-mentors"
           },
           {
             "@type": "ListItem",
-            "position": 37,
-            "name": "Shop Smarter",
+            "position": 27,
+            "name": "How to Shop Smarter with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-shop-smarter"
           },
           {
             "@type": "ListItem",
-            "position": 38,
-            "name": "Upgrade Your Zoom Background",
+            "position": 28,
+            "name": "How to Make a Custom Zoom Background with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-upgrade-your-zoom-background"
           },
           {
             "@type": "ListItem",
-            "position": 39,
-            "name": "Daily Mind Dump for Mental Clarity",
+            "position": 29,
+            "name": "How to Organize Your Thoughts with an AI Mind Map",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-daily-mind-dump-for-mental"
           },
           {
             "@type": "ListItem",
-            "position": 40,
-            "name": "Effortless Meeting Prep",
+            "position": 30,
+            "name": "How to Prep for Any Meeting in Minutes with AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-effortless-meeting-prep"
           },
           {
             "@type": "ListItem",
-            "position": 41,
-            "name": "Keep Up with Industry Trends Easily",
+            "position": 31,
+            "name": "How to Keep Up with Industry Trends Using AI",
             "url": "https://ideakitchen.substack.com/p/ai-recipe-learn-something-new-every"
-          },
-          {
-            "@type": "ListItem",
-            "position": 42,
-            "name": "Welcome to Idea Kitchen! Your AI Recipe Book for Busy Professionals",
-            "url": "https://ideakitchen.substack.com/p/welcome-to-idea-kitchen-your-ai-recipe"
           }
         ]
       }
@@ -569,663 +293,290 @@ select.filter-select{
   ]
 }
 </script>
-<!-- RECIPE_SCHEMA_END -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Source Serif 4',Georgia,serif;background:#1A1A1A;color:#1A1A1A;line-height:1.7;-webkit-font-smoothing:antialiased;}
+.book{max-width:960px;margin:0 auto 2rem;background:#FFFDF7;min-height:100vh;box-shadow:-4px 0 12px rgba(0,0,0,.15),4px 0 12px rgba(0,0,0,.08),0 8px 30px rgba(0,0,0,.2);position:relative;}
+.book::before{content:'';position:absolute;top:0;bottom:0;left:0;width:30px;background:linear-gradient(90deg,rgba(0,0,0,.08),transparent);pointer-events:none;}
+.book-inner{padding:4rem 3.5rem 3rem 3.5rem;}
+@media(min-width:961px){.nav-inner{max-width:960px;padding-left:0;padding-right:0;}.nav-subscribe-wrap{justify-self:end;}}
+.rb-hero{text-align:center;padding-bottom:2.6rem;border-bottom:1px solid rgba(138,130,110,.25);margin-bottom:2.8rem;}
+.rb-kicker{font-family:'Homemade Apple',cursive;font-size:1rem;color:#8B9E7C;margin-bottom:1.3rem;}
+.rb-title{font-family:'Special Elite',monospace;font-size:clamp(2.4rem,5vw,3.4rem);color:#1A1A1A;line-height:1.1;margin-bottom:.7rem;}
+.rb-tagline{font-size:1.18rem;color:#4A2040;font-style:italic;margin-bottom:1.5rem;}
+.rb-stats{font-family:'Special Elite',monospace;font-size:.74rem;letter-spacing:1.5px;text-transform:uppercase;color:#8B9E7C;}
+.rb-stats b{color:#A0522D;font-weight:normal;}.rb-stats span{margin:0 .55rem;opacity:.5;}
+.rb-section{margin-bottom:3.2rem;}
+.rb-sec-head{display:flex;align-items:baseline;gap:.85rem;margin-bottom:.25rem;}
+.rb-sec-num{font-family:'Special Elite',monospace;font-size:.95rem;color:#A0522D;letter-spacing:1px;}
+.rb-sec-title{font-family:'Special Elite',monospace;font-size:1.35rem;color:#4A2040;}
+.rb-sec-note{font-size:.94rem;color:#7A6A52;font-style:italic;margin-bottom:1.4rem;}
+.rb-lead{font-family:'Special Elite',monospace;font-size:1.05rem;letter-spacing:.5px;color:#4A2040;text-align:center;margin:0 auto 1.6rem;}
+.rb-featured{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.feat{display:flex;flex-direction:column;background:#FFFFFF;border:1px solid rgba(138,130,110,.4);border-top:3px solid #A0522D;border-radius:8px;padding:1.5rem 1.4rem;text-decoration:none;box-shadow:0 1px 2px rgba(75,55,30,.08),0 8px 18px rgba(75,55,30,.08);transition:transform .2s ease,box-shadow .2s ease;}
+.feat:hover{transform:translateY(-3px);box-shadow:0 3px 6px rgba(75,55,30,.12),0 14px 28px rgba(75,55,30,.14);}
+.feat-tag{font-family:'Special Elite',monospace;font-size:.62rem;letter-spacing:1px;text-transform:uppercase;color:#8B9E7C;margin-bottom:.65rem;}
+.feat-title{font-family:'Special Elite',monospace;font-size:1.04rem;color:#1A1A1A;line-height:1.25;margin-bottom:.5rem;}
+.feat-sub{font-size:.85rem;color:#4A453E;line-height:1.5;margin-bottom:1rem;flex:1;}
+.feat-read{font-family:'Special Elite',monospace;font-size:.76rem;color:#A0522D;}
+.feat:hover .feat-read{text-decoration:underline;text-underline-offset:2px;}
+.rb-list{display:grid;grid-template-columns:1fr 1fr;gap:0 2.4rem;}
+.rcp{display:grid;grid-template-columns:1fr auto;align-items:baseline;column-gap:1rem;row-gap:.2rem;padding:.85rem .3rem;border-bottom:1px solid rgba(138,130,110,.22);text-decoration:none;transition:background .15s ease;}
+.rcp:hover{background:rgba(160,82,45,.05);}
+.rcp-title{grid-column:1;font-family:'Special Elite',monospace;font-size:.94rem;color:#1A1A1A;line-height:1.3;transition:color .15s;}
+.rcp:hover .rcp-title{color:#A0522D;}
+.rcp-tool{grid-column:2;grid-row:1 / span 2;align-self:center;font-family:'Special Elite',monospace;font-size:.55rem;letter-spacing:.4px;text-transform:uppercase;color:#9C5A38;background:rgba(160,82,45,.07);border:1px solid rgba(160,82,45,.25);border-radius:999px;padding:.18rem .6rem;white-space:nowrap;}
+.rcp-sub{grid-column:1;font-size:.8rem;color:#7A6A52;line-height:1.4;}
+.rb-rule{max-width:520px;border:none;border-top:1px solid rgba(138,130,110,.25);margin:2.6rem auto 3rem;}
+.subscribe-section{max-width:420px;margin:0 auto;text-align:center;padding-top:0;}
+.subscribe-section h2{font-family:'Special Elite',monospace;font-size:1.3rem;color:#4A2040;margin-bottom:.6rem;}
+.subscribe-section p{font-size:.92rem;opacity:.7;margin-bottom:1.5rem;}
+.sub-note{font-size:.75rem;opacity:.45;margin-bottom:0;}
+.page-num{text-align:center;font-family:'Source Serif 4',Georgia,serif;font-size:.8rem;color:#1A1A1A;opacity:.3;padding-top:2.5rem;}
+@media(max-width:860px){.book-inner{padding:2.5rem 1.6rem 2rem 1.9rem;}.rb-featured{grid-template-columns:1fr;}.rb-list{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
 
-<!-- Shared Site Nav (identical to home) -->
 <nav class="site-nav">
-    <div class="nav-inner">
-        <a href="index.html" class="nav-brand">
-            <div class="nav-brand-text">
-                <span class="nav-name">Idea Kitchen</span>
-                <span class="nav-tagline">AI recipes for busy professionals</span>
-            </div>
-        </a>
-        <nav class="nav-links" id="primary-nav">
-            <a href="recipes.html" class="nav-link active">Recipe Box</a>
-            <a href="services.html" class="nav-link">Services</a>
-        </nav>
-        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
-        <div class="nav-subscribe-wrap">
-            <a href="https://ideakitchen.substack.com/subscribe" class="nav-subscribe" target="_blank" rel="noopener">Subscribe →</a>
-        </div>
-    </div>
+  <div class="nav-inner">
+    <a href="./" class="nav-brand"><div class="nav-brand-text"><span class="nav-name">Idea Kitchen</span><span class="nav-tagline">AI recipes for busy professionals</span></div></a>
+    <nav class="nav-links" id="primary-nav">
+      <a href="recipes.html" class="nav-link active">Recipe Box</a>
+      <a href="services.html" class="nav-link">Services</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+    <div class="nav-subscribe-wrap"><a href="https://ideakitchen.substack.com/subscribe" class="nav-subscribe" target="_blank" rel="noopener">Subscribe →</a></div>
+  </div>
 </nav>
 
 <div class="book">
   <div class="book-inner">
 
-    <!-- Header (title-page style) -->
-    <div class="title-section">
-      <p class="title-kicker">a new idea every week</p>
-      <h1 class="title-name">The Recipe Box</h1>
-      <p class="title-tagline">Simple recipes for everyday AI</p>
-      <div class="title-rule"></div>
-    </div>
+    <header class="rb-hero">
+      <p class="rb-kicker">a new idea every week</p>
+      <h1 class="rb-title">The Recipe Box</h1>
+      <p class="rb-tagline">Simple recipes for everyday AI, made for humans.</p>
+      <p class="rb-stats"><b>31 recipes</b><span>•</span><b>13 AI tools</b><span>•</span><b>1,200+ readers</b></p>
+    </header>
 
-    <!-- Recipe Archive -->
-    <section class="recipe-archive">
-
-      <!-- Filter and Sort Controls -->
-      <div class="archive-toolbar">
-      <div class="archive-controls">
-          <div class="filter-group">
-              <label for="difficulty-filter">Difficulty:</label>
-              <select id="difficulty-filter" class="filter-select">
-                  <option value="all">All Levels</option>
-                  <option value="easy">Easy</option>
-                  <option value="medium">Medium</option>
-              </select>
-          </div>
-
-          <div class="filter-group">
-              <label for="time-filter">Prep Time:</label>
-              <select id="time-filter" class="filter-select">
-                  <option value="all">Any Time</option>
-                  <option value="quick">Quick (5-10 min)</option>
-                  <option value="medium">Medium (15-20 min)</option>
-                  <option value="long">Longer (30+ min)</option>
-              </select>
-          </div>
-
-          <div class="filter-group tool-filter-group">
-              <label for="tool-filter-toggle">Tools:</label>
-              <div class="tool-filter-wrapper">
-                  <button type="button" id="tool-filter-toggle" class="filter-select tool-filter-toggle">
-                      <span id="tool-filter-label">All Tools</span>
-                      <span class="dropdown-arrow">▼</span>
-                  </button>
-                  <div id="tool-filter-dropdown" class="tool-filter-dropdown" style="display: none;">
-                      <label class="tool-checkbox-label all-tools-option">
-                          <input type="checkbox" id="all-tools-checkbox" class="tool-checkbox-all">
-                          <span>All Tools</span>
-                      </label>
-                      <div class="tool-checkbox-divider"></div>
-                      <label class="tool-checkbox-label">
-                          <input type="checkbox" value="ChatGPT" class="tool-checkbox">
-                          <span>ChatGPT</span>
-                      </label>
-                      <label class="tool-checkbox-label">
-                          <input type="checkbox" value="Claude" class="tool-checkbox">
-                          <span>Claude</span>
-                      </label>
-                      <label class="tool-checkbox-label">
-                          <input type="checkbox" value="Gemini" class="tool-checkbox">
-                          <span>Gemini</span>
-                      </label>
-                      <label class="tool-checkbox-label">
-                          <input type="checkbox" value="NotebookLM" class="tool-checkbox">
-                          <span>NotebookLM</span>
-                      </label>
-                      <label class="tool-checkbox-label">
-                          <input type="checkbox" value="Perplexity" class="tool-checkbox">
-                          <span>Perplexity</span>
-                      </label>
-                      <label class="tool-checkbox-label">
-                          <input type="checkbox" value="Zapier" class="tool-checkbox">
-                          <span>Zapier</span>
-                      </label>
-                      <label class="tool-checkbox-label">
-                          <input type="checkbox" value="Gamma" class="tool-checkbox">
-                          <span>Gamma</span>
-                      </label>
-                      <label class="tool-checkbox-label">
-                          <input type="checkbox" value="Lovable" class="tool-checkbox">
-                          <span>Lovable</span>
-                      </label>
-                      <label class="tool-checkbox-label">
-                          <input type="checkbox" value="Codex" class="tool-checkbox">
-                          <span>Codex</span>
-                      </label>
-                  </div>
-              </div>
-          </div>
-
-          <div class="filter-group sort-group">
-              <label for="sort-select">Sort By:</label>
-              <select id="sort-select" class="filter-select">
-                  <option value="popular">Most Popular</option>
-                  <option value="newest">Newest First</option>
-                  <option value="oldest">Oldest First</option>
-              </select>
-          </div>
-      </div>
-      <p id="results-count" class="results-count">Showing all 42 recipes</p>
-      </div>
-
-      <!-- Selected Tools Pills -->
-      <div id="selected-tools-pills" class="selected-tools-pills"></div>
-
-      <!-- Empty State -->
-      <div id="empty-state" class="empty-state" style="display: none;">
-          <div class="empty-state-content">
-              <p class="empty-state-icon">🍳</p>
-              <h3 class="empty-state-title">No recipes found</h3>
-              <p class="empty-state-message">Try adjusting your filters to see more recipes.</p>
-              <button id="clear-filters-btn" class="clear-filters-btn">Clear all filters</button>
-          </div>
-      </div>
-
-      
-      <div class="recipe-grid">
-
-                <!-- RECIPES_START -->
-                <!-- Not Sure What to Use AI For? Start Here -->
-                <article class="recipe-card" data-difficulty="medium" data-time="10" data-popularity="107.00" data-date="2026-06-12" data-tools="General AI">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/not-sure-what-to-use-ai-for-start" target="_blank" rel="noopener" class="recipe-link">Not Sure What to Use AI For? Start Here</a></h3>
-                    <p class="recipe-subtitle">31 real ways to use AI, organized by your actual life. The new Idea Kitchen website is an AI menu you can browse</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Medium</p>
-                        <p class="recipe-teaser">Hey there,</p>
-                        <a href="https://ideakitchen.substack.com/p/not-sure-what-to-use-ai-for-start" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">General AI</span></div>
-                </article>
-
-                <!-- Type in Your Own Handwriting -->
-                <article class="recipe-card" data-difficulty="easy" data-time="15" data-popularity="124.00" data-date="2026-06-09" data-tools="Codex">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-type-in-your-own-handwriting" target="_blank" rel="noopener" class="recipe-link">Type in Your Own Handwriting</a></h3>
-                    <p class="recipe-subtitle">Turn your real handwriting into a font you can type with using Codex</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 15 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Normally I’m in your inbox with something to make everyday life easier: meeting prep bots, inbox cleanups, morning dashboards, using AI to fix something annoying in your neighborho</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-type-in-your-own-handwriting" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Codex</span></div>
-                </article>
-
-                <!-- How to Use AI for Good -->
-                <article class="recipe-card" data-difficulty="easy" data-time="15" data-popularity="130.00" data-date="2026-05-29" data-tools="General AI">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-how-to-use-ai-for-good" target="_blank" rel="noopener" class="recipe-link">How to Use AI for Good</a></h3>
-                    <p class="recipe-subtitle">Be the person who finally fixes that one annoying thing</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 15 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">There’s a lot of talk right now about the downsides of AI.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-how-to-use-ai-for-good" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">General AI</span></div>
-                </article>
-
-                <!-- From 10 Tabs to One Live Dashboard -->
-                <article class="recipe-card" data-difficulty="medium" data-time="15" data-popularity="169.00" data-date="2026-04-30" data-tools="Claude,Gmail,Slack,Notion">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-from-10-tabs-to-one-live" target="_blank" rel="noopener" class="recipe-link">From 10 Tabs to One Live Dashboard</a></h3>
-                    <p class="recipe-subtitle">Turn your calendar, inbox, and Slack into a single morning briefing using Claude Live Artifacts</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 15 min | <strong>Difficulty:</strong> Medium</p>
-                        <p class="recipe-teaser">It’s 8:15am.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-from-10-tabs-to-one-live" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Claude, Gmail, Slack, Notion</span></div>
-                </article>
-
-                <!-- The answer to &quot;how do I keep up with AI?&quot; -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="105.00" data-date="2026-04-21" data-tools="General AI">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/the-answer-to-how-do-i-keep-up-with-1c3" target="_blank" rel="noopener" class="recipe-link">The answer to &quot;how do I keep up with AI?&quot;</a></h3>
-                    <p class="recipe-subtitle">A free daily AI briefing for everyone, plus a personalized version in the works for members.</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Hey there,</p>
-                        <a href="https://ideakitchen.substack.com/p/the-answer-to-how-do-i-keep-up-with-1c3" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">General AI</span></div>
-                </article>
-
-                <!-- Wake Up to a Clean Inbox -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="120.00" data-date="2026-04-14" data-tools="Google Workspace Studio">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-wake-up-to-a-clean-inbox" target="_blank" rel="noopener" class="recipe-link">Wake Up to a Clean Inbox</a></h3>
-                    <p class="recipe-subtitle">Automatically detect and remove unwanted sales emails using Google Workspace Studio</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Somewhere in your inbox right now, there&#39;s an email that actually matters.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-wake-up-to-a-clean-inbox" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Google Workspace Studio</span></div>
-                </article>
-
-                <!-- Stop Paying for Stuff You Don&#39;t Use -->
-                <article class="recipe-card" data-difficulty="easy" data-time="15" data-popularity="123.00" data-date="2026-03-28" data-tools="Claude">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-stop-paying-for-stuff-you" target="_blank" rel="noopener" class="recipe-link">Stop Paying for Stuff You Don&#39;t Use</a></h3>
-                    <p class="recipe-subtitle">Find your forgotten subscriptions (and cancel them) using Claude Cowork</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 15 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">You know you’re paying for stuff you don’t use.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-stop-paying-for-stuff-you" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Claude</span></div>
-                </article>
-
-                <!-- Build Your Personal Meal Planning Assistant -->
-                <article class="recipe-card" data-difficulty="medium" data-time="15" data-popularity="133.00" data-date="2026-01-22" data-tools="Claude">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-build-your-personal-meal" target="_blank" rel="noopener" class="recipe-link">Build Your Personal Meal Planning Assistant</a></h3>
-                    <p class="recipe-subtitle">Build your first AI assistant that answers &quot;what&#39;s for dinner?&quot; using Claude Code (no coding required)</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 15 min | <strong>Difficulty:</strong> Medium</p>
-                        <p class="recipe-teaser">Meal planning is exhausting.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-build-your-personal-meal" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Claude</span></div>
-                </article>
-
-                <!-- What’s New for 2026 -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="109.00" data-date="2026-01-08" data-tools="General AI">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/whats-new-for-2026" target="_blank" rel="noopener" class="recipe-link">What’s New for 2026</a></h3>
-                    <p class="recipe-subtitle">Welcome back. If your inbox is chaos, start here.</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Welcome back.</p>
-                        <a href="https://ideakitchen.substack.com/p/whats-new-for-2026" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">General AI</span></div>
-                </article>
-
-                <!-- Catch Up After Vacation in One Chat -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="122.00" data-date="2025-10-28" data-tools="Gemini,Gmail">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-catch-up-after-vacation" target="_blank" rel="noopener" class="recipe-link">Catch Up After Vacation in One Chat</a></h3>
-                    <p class="recipe-subtitle">Skim what matters in your Gmail inbox and draft replies in seconds using Gemini</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Coming back to a flood of emails is the worst part of taking time off.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-catch-up-after-vacation" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Gemini, Gmail</span></div>
-                </article>
-
-                <!-- Cooking with AI (Live!) Recording: Learn 4 New AI Workflows -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="102.00" data-date="2025-10-07" data-tools="Gemini,Gamma,Lovable">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-58b" target="_blank" rel="noopener" class="recipe-link">Cooking with AI (Live!) Recording: Learn 4 New AI Workflows</a></h3>
-                    <p class="recipe-subtitle">Catch the 40-minute replay of how to use the latest features in Gemini, Lovable, and Gamma</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Our next demo event is next week on Thursday, Oct 16th at 9am PT, register here to join</p>
-                        <a href="https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-58b" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Gemini, Gamma, Lovable</span></div>
-                </article>
-
-                <!-- How to Practice for Job Interviews with AI -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="120.00" data-date="2025-09-30" data-tools="ChatGPT">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-prep-for-interviews-out" target="_blank" rel="noopener" class="recipe-link">How to Practice for Job Interviews with AI</a></h3>
-                    <p class="recipe-subtitle">Simulate job interviews and get instant feedback on your answers with ChatGPT’s Advanced Voice Mode</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Advanced Voice Mode is the biggest leap forward in how we talk to AI.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-prep-for-interviews-out" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT</span></div>
-                </article>
-
-                <!-- Find the Perfect Dupe for Your Discontinued Fave -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="115.00" data-date="2025-09-23" data-tools="ChatGPT">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-find-the-perfect-dupe-for" target="_blank" rel="noopener" class="recipe-link">Find the Perfect Dupe for Your Discontinued Fave</a></h3>
-                    <p class="recipe-subtitle">Automatically turn product heartbreak into new finds with ChatGPT’s Agent Mode</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">The heartbreak is real.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-find-the-perfect-dupe-for" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT</span></div>
-                </article>
-
-                <!-- How to Vibe Code a Full Website (With Auth &amp; Billing) -->
-                <article class="recipe-card" data-difficulty="medium" data-time="15" data-popularity="127.00" data-date="2025-09-16" data-tools="Lovable">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/how-to-vibe-code-a-full-website-with" target="_blank" rel="noopener" class="recipe-link">How to Vibe Code a Full Website (With Auth &amp; Billing)</a></h3>
-                    <p class="recipe-subtitle">Build a real membership site with auth, billing, and gated pages using Lovable + Outseta</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 15 min | <strong>Difficulty:</strong> Medium</p>
-                        <p class="recipe-teaser">📣 Quick Update</p>
-                        <a href="https://ideakitchen.substack.com/p/how-to-vibe-code-a-full-website-with" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Lovable</span></div>
-                </article>
-
-                <!-- From Selfie to Studio Headshot -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="114.00" data-date="2025-09-09" data-tools="Gemini">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/from-selfie-to-studio-headshot" target="_blank" rel="noopener" class="recipe-link">From Selfie to Studio Headshot</a></h3>
-                    <p class="recipe-subtitle">AI Recipe: Turn your everyday photo into a professional-grade headshot using Gemini’s new Nano Banana feature</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Need a new LinkedIn profile pic but no time (or budget) for a studio shoot?</p>
-                        <a href="https://ideakitchen.substack.com/p/from-selfie-to-studio-headshot" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Gemini</span></div>
-                </article>
-
-                <!-- From Doc to Slide Deck (Zero Copy/Pasting Required) -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="118.00" data-date="2025-08-26" data-tools="Gamma">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-from-doc-to-slide-deck" target="_blank" rel="noopener" class="recipe-link">From Doc to Slide Deck (Zero Copy/Pasting Required)</a></h3>
-                    <p class="recipe-subtitle">Turn any document into a sleek presentation using Gamma’s Import with AI feature</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">You just published an insight-packed doc.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-from-doc-to-slide-deck" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Gamma</span></div>
-                </article>
-
-                <!-- Personal Storybooks Made Simple -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="114.00" data-date="2025-08-19" data-tools="Gemini">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-personal-storybooks-made" target="_blank" rel="noopener" class="recipe-link">Personal Storybooks Made Simple</a></h3>
-                    <p class="recipe-subtitle">Bring your stories to life with narration and visuals using Gemini Storybook</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">You probably weren’t planning to make a storybook today.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-personal-storybooks-made" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Gemini</span></div>
-                </article>
-
-                <!-- From PDF to Video in Under 10 Minutes -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="120.00" data-date="2025-08-13" data-tools="NotebookLM">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-from-pdf-to-video-in-under" target="_blank" rel="noopener" class="recipe-link">From PDF to Video in Under 10 Minutes</a></h3>
-                    <p class="recipe-subtitle">Turn “Read This Before the Meeting” into a video they’ll actually watch using NotebookLM’s new Video Overview feature</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">📣 Quick Update</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-from-pdf-to-video-in-under" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">NotebookLM</span></div>
-                </article>
-
-                <!-- Build a Personal Health Coach -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="120.00" data-date="2025-08-05" data-tools="ChatGPT">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-build-a-personal-health" target="_blank" rel="noopener" class="recipe-link">Build a Personal Health Coach</a></h3>
-                    <p class="recipe-subtitle">Receive a daily movement plan customized to your life and goals using ChatGPT Projects</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">You want to make progress on your health goals—but between juggling work, kids, and everyday life, who has time to plan workouts, much less get to the gym?</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-build-a-personal-health" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT</span></div>
-                </article>
-
-                <!-- Log Team Decisions from Slack to Notion with One Emoji -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="129.00" data-date="2025-07-29" data-tools="Zapier,Slack,Notion">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-log-team-decisions-from" target="_blank" rel="noopener" class="recipe-link">Log Team Decisions from Slack to Notion with One Emoji</a></h3>
-                    <p class="recipe-subtitle">Automatically turn long Slack threads into clean decision logs in Notion using Zapier Agents</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">After a long back-and-forth Slack thread, your team finally makes a decision.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-log-team-decisions-from" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Zapier, Slack, Notion</span></div>
-                </article>
-
-                <!-- How a Product Manager Uses AI to Go From Idea to Prototype -->
-                <article class="recipe-card" data-difficulty="easy" data-time="15" data-popularity="144.00" data-date="2025-07-22" data-tools="General AI">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/how-a-product-manager-uses-ai-to" target="_blank" rel="noopener" class="recipe-link">How a Product Manager Uses AI to Go From Idea to Prototype</a></h3>
-                    <p class="recipe-subtitle">A behind-the-scenes look at the exact tools and steps that turn rough ideas into real products</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 15 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Shipping products isn’t just about strategy.</p>
-                        <a href="https://ideakitchen.substack.com/p/how-a-product-manager-uses-ai-to" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">General AI</span></div>
-                </article>
-
-                <!-- Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="104.00" data-date="2025-07-18" data-tools="ChatGPT,Claude,Gemini,Zapier">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-1a4" target="_blank" rel="noopener" class="recipe-link">Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows</a></h3>
-                    <p class="recipe-subtitle">Catch the 40-minute replay of how to use the latest features in ChatGPT, Zapier, Claude, and Gemini</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Hey there,</p>
-                        <a href="https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-1a4" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT, Claude, Gemini, Zapier</span></div>
-                </article>
-
-                <!-- How to Add Events to Your Calendar from a Photo Using AI -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="123.00" data-date="2025-07-08" data-tools="Gemini">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-quick-add-events-from-any" target="_blank" rel="noopener" class="recipe-link">How to Add Events to Your Calendar from a Photo Using AI</a></h3>
-                    <p class="recipe-subtitle">Create Google Calendar events instantly from screenshots, flyers, or PDFs using Gemini connections</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Create Google Calendar events instantly from screenshots, flyers, or PDFs using Gemini connections</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-quick-add-events-from-any" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Gemini</span></div>
-                </article>
-
-                <!-- How to Use AI to Write Replies to Hard Messages -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="126.00" data-date="2025-07-01" data-tools="Claude">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-the-perfect-response-every" target="_blank" rel="noopener" class="recipe-link">How to Use AI to Write Replies to Hard Messages</a></h3>
-                    <p class="recipe-subtitle">Generate polished replies fast using Claude Artifacts</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Blank reply box.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-the-perfect-response-every" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Claude</span></div>
-                </article>
-
-                <!-- Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="103.00" data-date="2025-06-20" data-tools="ChatGPT,Gemini,Zapier">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-d7b" target="_blank" rel="noopener" class="recipe-link">Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows</a></h3>
-                    <p class="recipe-subtitle">Catch the 40-minute replay of how to use the latest features in ChatGPT, Zapier, and Gemini</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Hey there,</p>
-                        <a href="https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-d7b" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT, Gemini, Zapier</span></div>
-                </article>
-
-                <!-- Your First AI Chatbot (in Just 15 Minutes) -->
-                <article class="recipe-card" data-difficulty="medium" data-time="15" data-popularity="128.00" data-date="2025-06-17" data-tools="Zapier">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-your-first-ai-chatbot-in" target="_blank" rel="noopener" class="recipe-link">Your First AI Chatbot (in Just 15 Minutes)</a></h3>
-                    <p class="recipe-subtitle">Deliver personalized recommendations at scale using Zapier Chatbots (no code required)</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 15 min | <strong>Difficulty:</strong> Medium</p>
-                        <p class="recipe-teaser">Deliver personalized recommendations at scale using Zapier Chatbots (no code required)</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-your-first-ai-chatbot-in" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Zapier</span></div>
-                </article>
-
-                <!-- How to Use AI to Make Hard Decisions -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="128.00" data-date="2025-06-10" data-tools="ChatGPT">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-from-stuck-to-decided" target="_blank" rel="noopener" class="recipe-link">How to Use AI to Make Hard Decisions</a></h3>
-                    <p class="recipe-subtitle">Turn overthinking into action with a decision-making prompt for ChatGPT</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">📣 Quick Update</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-from-stuck-to-decided" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT</span></div>
-                </article>
-
-                <!-- How a Busy Marketer Uses AI to Work Faster (Without Losing Authenticity) -->
-                <article class="recipe-card" data-difficulty="easy" data-time="15" data-popularity="132.00" data-date="2025-06-03" data-tools="General AI">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/how-a-busy-marketer-uses-ai-to-work" target="_blank" rel="noopener" class="recipe-link">How a Busy Marketer Uses AI to Work Faster (Without Losing Authenticity)</a></h3>
-                    <p class="recipe-subtitle">A behind-the-scenes look at the exact tools and prompts that save hours</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 15 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Marketing is messy.</p>
-                        <a href="https://ideakitchen.substack.com/p/how-a-busy-marketer-uses-ai-to-work" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">General AI</span></div>
-                </article>
-
-                <!-- Create Instant SOPs from Meeting Recordings -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="123.00" data-date="2025-05-27" data-tools="Gemini">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-create-instant-sops-from" target="_blank" rel="noopener" class="recipe-link">Create Instant SOPs from Meeting Recordings</a></h3>
-                    <p class="recipe-subtitle">Automatically turn messy transcripts into polished documentation using Gemini Gems</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Automatically turn messy transcripts into polished documentation using Gemini Gems</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-create-instant-sops-from" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Gemini</span></div>
-                </article>
-
-                <!-- Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="103.00" data-date="2025-05-22" data-tools="ChatGPT,NotebookLM">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-a42" target="_blank" rel="noopener" class="recipe-link">Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows</a></h3>
-                    <p class="recipe-subtitle">Catch the 50-minute replay of how to use the latest features in ChatGPT and NotebookLM</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Hey there,</p>
-                        <a href="https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn-a42" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT, NotebookLM</span></div>
-                </article>
-
-                <!-- How to Build an Automated Meeting Prep Bot (Zapier) -->
-                <article class="recipe-card" data-difficulty="medium" data-time="10" data-popularity="130.00" data-date="2025-05-20" data-tools="Zapier">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-create-your-own-meeting" target="_blank" rel="noopener" class="recipe-link">How to Build an Automated Meeting Prep Bot (Zapier)</a></h3>
-                    <p class="recipe-subtitle">Automatically receive a personalized morning digest every day using Zapier’s new Agents feature</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Medium</p>
-                        <p class="recipe-teaser">Tired of scrambling before 1:1 meetings?</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-create-your-own-meeting" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Zapier</span></div>
-                </article>
-
-                <!-- Discover your Hogwarts House -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="126.00" data-date="2025-05-13" data-tools="ChatGPT">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-discover-your-hogwarts" target="_blank" rel="noopener" class="recipe-link">Discover your Hogwarts House</a></h3>
-                    <p class="recipe-subtitle">Experience the Sorting Hat with a custom story written about you using this ChatGPT prompt</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">📣 Quick Update</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-discover-your-hogwarts" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT</span></div>
-                </article>
-
-                <!-- How to Use AI to Decide What to Eat Tonight -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="114.00" data-date="2025-05-06" data-tools="ChatGPT">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-instant-answers-for-what" target="_blank" rel="noopener" class="recipe-link">How to Use AI to Decide What to Eat Tonight</a></h3>
-                    <p class="recipe-subtitle">Upload a menu and get personalized suggestions in seconds using ChatGPT&#39;s new o3 image feature</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Upload a menu and get personalized suggestions in seconds using ChatGPT&#39;s new o3 image feature</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-instant-answers-for-what" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT</span></div>
-                </article>
-
-                <!-- How to Build an AI FAQ Bot for Your Team (No Code) -->
-                <article class="recipe-card" data-difficulty="medium" data-time="10" data-popularity="132.00" data-date="2025-04-29" data-tools="General AI">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-your-first-ai-bot-assistant" target="_blank" rel="noopener" class="recipe-link">How to Build an AI FAQ Bot for Your Team (No Code)</a></h3>
-                    <p class="recipe-subtitle">Save time by letting AI answer FAQs for you 24/7 (no code required)</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Medium</p>
-                        <p class="recipe-teaser">Out of office, but not out of answers.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-your-first-ai-bot-assistant" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">General AI</span></div>
-                </article>
-
-                <!-- Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="105.00" data-date="2025-04-20" data-tools="ChatGPT,NotebookLM">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn" target="_blank" rel="noopener" class="recipe-link">Cooking with AI (Live!) Recording: Learn 4 Practical AI Workflows</a></h3>
-                    <p class="recipe-subtitle">Catch the 35-minute replay of how to use the latest features in ChatGPT and NotebookLM</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Hey there,</p>
-                        <a href="https://ideakitchen.substack.com/p/cooking-with-ai-live-recording-learn" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT, NotebookLM</span></div>
-                </article>
-
-                <!-- Turn Experts Into Mentors -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="120.00" data-date="2025-04-15" data-tools="NotebookLM">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-turn-experts-into-mentors" target="_blank" rel="noopener" class="recipe-link">Turn Experts Into Mentors</a></h3>
-                    <p class="recipe-subtitle">Get personalized advice from top thinkers using new Discover Sources feature in NotebookLM</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Imagine having a personal mentor like Oprah, Brené Brown, or Adam Grant—ready to answer your questions and offer tailored advice anytime you need it.</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-turn-experts-into-mentors" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">NotebookLM</span></div>
-                </article>
-
-                <!-- Shop Smarter -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="117.00" data-date="2025-04-08" data-tools="Perplexity">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-shop-smarter" target="_blank" rel="noopener" class="recipe-link">Shop Smarter</a></h3>
-                    <p class="recipe-subtitle">Research what to buy (without endless tabs) by using Perplexity&#39;s &quot;Shop Like a Pro&quot;</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">📣 Quick Update</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-shop-smarter" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">Perplexity</span></div>
-                </article>
-
-                <!-- Upgrade Your Zoom Background -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="123.00" data-date="2025-04-01" data-tools="ChatGPT">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-upgrade-your-zoom-background" target="_blank" rel="noopener" class="recipe-link">Upgrade Your Zoom Background</a></h3>
-                    <p class="recipe-subtitle">Transform your video call setup with ChatGPT&#39;s new 4o Image Generation feature</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Tired of cluttered or boring Zoom backgrounds?</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-upgrade-your-zoom-background" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT</span></div>
-                </article>
-
-                <!-- Daily Mind Dump for Mental Clarity -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="158.00" data-date="2025-03-25" data-tools="NotebookLM">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-daily-mind-dump-for-mental" target="_blank" rel="noopener" class="recipe-link">Daily Mind Dump for Mental Clarity</a></h3>
-                    <p class="recipe-subtitle">Organize your thoughts quickly with Google NotebookLM&#39;s new Mind Map feature</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Ever feel overwhelmed with a million thoughts racing through your mind?</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-daily-mind-dump-for-mental" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">NotebookLM</span></div>
-                </article>
-
-                <!-- Effortless Meeting Prep -->
-                <article class="recipe-card" data-difficulty="easy" data-time="15" data-popularity="115.00" data-date="2025-03-18" data-tools="ChatGPT">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-effortless-meeting-prep" target="_blank" rel="noopener" class="recipe-link">Effortless Meeting Prep</a></h3>
-                    <p class="recipe-subtitle">Walk into every meeting fully informed with ChatGPT&#39;s new Deep Research feature</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 15 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Prep Time: 15 minutes</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-effortless-meeting-prep" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT</span></div>
-                </article>
-
-                <!-- Keep Up with Industry Trends Easily -->
-                <article class="recipe-card" data-difficulty="easy" data-time="5" data-popularity="116.00" data-date="2025-03-11" data-tools="ChatGPT">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/ai-recipe-learn-something-new-every" target="_blank" rel="noopener" class="recipe-link">Keep Up with Industry Trends Easily</a></h3>
-                    <p class="recipe-subtitle">Learn something new every day with ChatGPT tasks</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 5 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Prep Time: 5 minutes</p>
-                        <a href="https://ideakitchen.substack.com/p/ai-recipe-learn-something-new-every" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">ChatGPT</span></div>
-                </article>
-
-                <!-- Welcome to Idea Kitchen! Your AI Recipe Book for Busy Professionals -->
-                <article class="recipe-card" data-difficulty="easy" data-time="10" data-popularity="118.00" data-date="2025-02-13" data-tools="General AI">
-                    <h3 class="recipe-title"><a href="https://ideakitchen.substack.com/p/welcome-to-idea-kitchen-your-ai-recipe" target="_blank" rel="noopener" class="recipe-link">Welcome to Idea Kitchen! Your AI Recipe Book for Busy Professionals</a></h3>
-                    <p class="recipe-subtitle">Practical step-by-step guides to save you time</p>
-                    <div class="recipe-body">
-                        <p><strong>Prep Time:</strong> 10 min | <strong>Difficulty:</strong> Easy</p>
-                        <p class="recipe-teaser">Practical Guides to Save You Time</p>
-                        <a href="https://ideakitchen.substack.com/p/welcome-to-idea-kitchen-your-ai-recipe" target="_blank" rel="noopener" class="read-more">Read the recipe →</a>
-                    </div>
-                    <div class="tool-stamp"><span class="tool-name">General AI</span></div>
-                </article>
-                <!-- RECIPES_END -->
-
-            
+    <section class="rb-section">
+      <p class="rb-lead">New here? Start with these three.</p>
+      <div class="rb-featured">
+        <a class="feat" href="https://ideakitchen.substack.com/p/ai-recipe-from-10-tabs-to-one-live" target="_blank" rel="noopener">
+          <span class="feat-tag">15 min · medium</span>
+          <span class="feat-title">Build a Daily Dashboard</span>
+          <span class="feat-sub">Turn your calendar, inbox, and Slack into a single morning briefing using Claude Live Artifacts</span>
+          <span class="feat-read">Read the recipe →</span>
+        </a>
+        <a class="feat" href="https://ideakitchen.substack.com/p/ai-recipe-wake-up-to-a-clean-inbox" target="_blank" rel="noopener">
+          <span class="feat-tag">10 min · easy</span>
+          <span class="feat-title">Auto-Clean Your Inbox</span>
+          <span class="feat-sub">Automatically detect and remove unwanted sales emails using Google Workspace Studio</span>
+          <span class="feat-read">Read the recipe →</span>
+        </a>
+        <a class="feat" href="https://ideakitchen.substack.com/p/ai-recipe-daily-mind-dump-for-mental" target="_blank" rel="noopener">
+          <span class="feat-tag">10 min · easy</span>
+          <span class="feat-title">Organize Your Racing Thoughts</span>
+          <span class="feat-sub">Organize your thoughts quickly with Google NotebookLM&#39;s new Mind Map feature</span>
+          <span class="feat-read">Read the recipe →</span>
+        </a>
       </div>
     </section>
+
+    <hr class="rb-rule">
+
+    <p class="rb-lead">…or jump to what you want to get done</p>
+
+      <section class="rb-section">
+        <div class="rb-sec-head"><span class="rb-sec-num">01</span><h2 class="rb-sec-title">Win back your time</h2></div>
+        <p class="rb-sec-note">Clear the busywork that eats your day.</p>
+        <div class="rb-list">
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-stop-paying-for-stuff-you" target="_blank" rel="noopener">
+            <span class="rcp-title">Find and Cancel Forgotten Subscriptions</span>
+            <span class="rcp-tool">Claude</span>
+            <span class="rcp-sub">Find your forgotten subscriptions (and cancel them) using Claude Cowork</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-catch-up-after-vacation" target="_blank" rel="noopener">
+            <span class="rcp-title">Catch Up on Email After Vacation</span>
+            <span class="rcp-tool">Gemini</span>
+            <span class="rcp-sub">Skim what matters in your Gmail inbox and draft replies in seconds using Gemini</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-log-team-decisions-from" target="_blank" rel="noopener">
+            <span class="rcp-title">Auto-Log Slack Decisions to Notion</span>
+            <span class="rcp-tool">Zapier</span>
+            <span class="rcp-sub">Automatically turn long Slack threads into clean decision logs in Notion using Zapier Agents</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-quick-add-events-from-any" target="_blank" rel="noopener">
+            <span class="rcp-title">Add Calendar Events from a Photo</span>
+            <span class="rcp-tool">Gemini</span>
+            <span class="rcp-sub">Create Google Calendar events instantly from screenshots, flyers, or PDFs using Gemini connections</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-create-instant-sops-from" target="_blank" rel="noopener">
+            <span class="rcp-title">Turn Meeting Recordings into SOPs</span>
+            <span class="rcp-tool">Gemini</span>
+            <span class="rcp-sub">Automatically turn messy transcripts into polished documentation using Gemini Gems</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-effortless-meeting-prep" target="_blank" rel="noopener">
+            <span class="rcp-title">Prep for Any Meeting in Minutes</span>
+            <span class="rcp-tool">ChatGPT</span>
+            <span class="rcp-sub">Walk into every meeting fully informed with ChatGPT&#39;s new Deep Research feature</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="rb-section">
+        <div class="rb-sec-head"><span class="rb-sec-num">02</span><h2 class="rb-sec-title">Think clearer & decide faster</h2></div>
+        <p class="rb-sec-note">Use AI as a thinking partner, not just a tool.</p>
+        <div class="rb-list">
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-prep-for-interviews-out" target="_blank" rel="noopener">
+            <span class="rcp-title">Practice Job Interviews Out Loud</span>
+            <span class="rcp-tool">ChatGPT</span>
+            <span class="rcp-sub">Simulate job interviews and get instant feedback on your answers with ChatGPT’s Advanced Voice Mode</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-the-perfect-response-every" target="_blank" rel="noopener">
+            <span class="rcp-title">Write Replies to Difficult Messages</span>
+            <span class="rcp-tool">Claude</span>
+            <span class="rcp-sub">Generate polished replies fast using Claude Artifacts</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-from-stuck-to-decided" target="_blank" rel="noopener">
+            <span class="rcp-title">Make a Tough Decision</span>
+            <span class="rcp-tool">ChatGPT</span>
+            <span class="rcp-sub">Turn overthinking into action with a decision-making prompt for ChatGPT</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-turn-experts-into-mentors" target="_blank" rel="noopener">
+            <span class="rcp-title">Learn from Any Expert</span>
+            <span class="rcp-tool">NotebookLM</span>
+            <span class="rcp-sub">Get personalized advice from top thinkers using new Discover Sources feature in NotebookLM</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-learn-something-new-every" target="_blank" rel="noopener">
+            <span class="rcp-title">Keep Up with Industry Trends</span>
+            <span class="rcp-tool">ChatGPT</span>
+            <span class="rcp-sub">Learn something new every day with ChatGPT tasks</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="rb-section">
+        <div class="rb-sec-head"><span class="rb-sec-num">03</span><h2 class="rb-sec-title">Make things people remember</h2></div>
+        <p class="rb-sec-note">Polished slides, video, and images in minutes.</p>
+        <div class="rb-list">
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-type-in-your-own-handwriting" target="_blank" rel="noopener">
+            <span class="rcp-title">Type in Your Own Handwriting</span>
+            <span class="rcp-tool">Codex</span>
+            <span class="rcp-sub">Turn your real handwriting into a font you can type with using Codex</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/from-selfie-to-studio-headshot" target="_blank" rel="noopener">
+            <span class="rcp-title">Get a Studio Headshot from a Selfie</span>
+            <span class="rcp-tool">Gemini</span>
+            <span class="rcp-sub">Turn your everyday photo into a professional-grade headshot using Gemini’s new Nano Banana feature</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-from-doc-to-slide-deck" target="_blank" rel="noopener">
+            <span class="rcp-title">Turn a Document into Slides</span>
+            <span class="rcp-tool">Gamma</span>
+            <span class="rcp-sub">Turn any document into a sleek presentation using Gamma’s Import with AI feature</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-personal-storybooks-made" target="_blank" rel="noopener">
+            <span class="rcp-title">Make a Personalized Storybook</span>
+            <span class="rcp-tool">Gemini</span>
+            <span class="rcp-sub">Bring your stories to life with narration and visuals using Gemini Storybook</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-from-pdf-to-video-in-under" target="_blank" rel="noopener">
+            <span class="rcp-title">Turn a PDF into a Video</span>
+            <span class="rcp-tool">NotebookLM</span>
+            <span class="rcp-sub">Turn “Read This Before the Meeting” into a video they’ll actually watch using NotebookLM’s new Video Overview feature</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-upgrade-your-zoom-background" target="_blank" rel="noopener">
+            <span class="rcp-title">Design a Custom Zoom Background</span>
+            <span class="rcp-tool">ChatGPT</span>
+            <span class="rcp-sub">Transform your video call setup with ChatGPT&#39;s new 4o Image Generation feature</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="rb-section">
+        <div class="rb-sec-head"><span class="rb-sec-num">04</span><h2 class="rb-sec-title">Build your own AI sidekick</h2></div>
+        <p class="rb-sec-note">Little assistants that work while you don’t. No code.</p>
+        <div class="rb-list">
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-build-your-personal-meal" target="_blank" rel="noopener">
+            <span class="rcp-title">Build a Meal-Planning Assistant</span>
+            <span class="rcp-tool">Claude</span>
+            <span class="rcp-sub">Build your first AI assistant that answers &quot;what&#39;s for dinner?&quot; using Claude Code (no coding required)</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/how-to-vibe-code-a-full-website-with" target="_blank" rel="noopener">
+            <span class="rcp-title">Vibe-Code a Full Website</span>
+            <span class="rcp-tool">Lovable</span>
+            <span class="rcp-sub">Build a real membership site with auth, billing, and gated pages using Lovable + Outseta</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-build-a-personal-health" target="_blank" rel="noopener">
+            <span class="rcp-title">Create a Personal Health Coach</span>
+            <span class="rcp-tool">ChatGPT</span>
+            <span class="rcp-sub">Receive a daily movement plan customized to your life and goals using ChatGPT Projects</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-your-first-ai-chatbot-in" target="_blank" rel="noopener">
+            <span class="rcp-title">Spin Up Your First AI Chatbot</span>
+            <span class="rcp-tool">Zapier</span>
+            <span class="rcp-sub">Deliver personalized recommendations at scale using Zapier Chatbots (no code required)</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-create-your-own-meeting" target="_blank" rel="noopener">
+            <span class="rcp-title">Build an Automated Meeting-Prep Bot</span>
+            <span class="rcp-tool">Zapier</span>
+            <span class="rcp-sub">Automatically receive a personalized morning digest every day using Zapier’s new Agents feature</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-your-first-ai-bot-assistant" target="_blank" rel="noopener">
+            <span class="rcp-title">Set Up an AI FAQ Bot for Your Team</span>
+            <span class="rcp-tool">ChatGPT</span>
+            <span class="rcp-sub">Save time by letting AI answer FAQs for you 24/7 (no code required)</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="rb-section">
+        <div class="rb-sec-head"><span class="rb-sec-num">05</span><h2 class="rb-sec-title">For everyday life</h2></div>
+        <p class="rb-sec-note">Because AI isn’t just for work.</p>
+        <div class="rb-list">
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-how-to-use-ai-for-good" target="_blank" rel="noopener">
+            <span class="rcp-title">Solve an Everyday Problem</span>
+            <span class="rcp-tool">Any AI</span>
+            <span class="rcp-sub">Be the person who finally fixes that one annoying thing</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-find-the-perfect-dupe-for" target="_blank" rel="noopener">
+            <span class="rcp-title">Find a Dupe for a Discontinued Product</span>
+            <span class="rcp-tool">ChatGPT</span>
+            <span class="rcp-sub">Automatically turn product heartbreak into new finds with ChatGPT’s Agent Mode</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-discover-your-hogwarts" target="_blank" rel="noopener">
+            <span class="rcp-title">Get Sorted into Your Hogwarts House</span>
+            <span class="rcp-tool">ChatGPT</span>
+            <span class="rcp-sub">Experience the Sorting Hat with a custom story written about you using this ChatGPT prompt</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-instant-answers-for-what" target="_blank" rel="noopener">
+            <span class="rcp-title">Decide What to Eat Tonight</span>
+            <span class="rcp-tool">ChatGPT</span>
+            <span class="rcp-sub">Upload a menu and get personalized suggestions in seconds using ChatGPT&#39;s new o3 image feature</span>
+          </a>
+          <a class="rcp" href="https://ideakitchen.substack.com/p/ai-recipe-shop-smarter" target="_blank" rel="noopener">
+            <span class="rcp-title">Shop Smarter</span>
+            <span class="rcp-tool">Perplexity</span>
+            <span class="rcp-sub">Research what to buy (without endless tabs) by using Perplexity&#39;s &quot;Shop Like a Pro&quot;</span>
+          </a>
+        </div>
+      </section>
+
+    <hr class="rb-rule">
+
+    <div class="subscribe-section">
+      <h2>Get the next recipe</h2>
+      <p>Learn practical ways to use AI, one idea at a time. Join 1,200+ readers.</p>
+      <a href="https://ideakitchen.substack.com/subscribe" target="_blank" rel="noopener" style="display:inline-block;font-family:'Special Elite',monospace;font-size:.95rem;padding:.8rem 2.2rem;background:#A0522D;color:#FFF8F0;text-decoration:none;border-radius:3px;margin-bottom:.7rem;">Subscribe →</a>
+      <p class="sub-note">Free. Unsubscribe whenever.</p>
+    </div>
 
     <p class="page-num">·</p>
 
   </div>
 </div>
 
-<!-- Shared Footer (identical to home) -->
 <footer class="footer landing-footer">
   <div class="container">
     <div class="scribble-divider">* * *</div>
@@ -1239,8 +590,6 @@ select.filter-select{
     </div>
   </div>
 </footer>
-
-<script src="script.js"></script>
 <script src="nav.js"></script>
 </body>
 </html>
