@@ -443,7 +443,7 @@ body.modal-open{overflow:hidden;}
                         <div class="offering-tag">Go Deeper</div>
                         <h3>Become a Chef</h3>
                         <p class="desc">You tried one recipe and thought "okay, I get it now." This is the whole cookbook. 75+ prompts and templates, every Cooking with AI recording, all curated links from every roundup, and live events where we build things together.</p>
-                        <a href="https://ideakitchen.substack.com/subscribe" target="_blank" rel="noopener" class="svc-btn svc-btn-sm">Become a Chef</a>
+                        <a href="https://ideakitchen.substack.com/subscribe" target="_blank" rel="noopener" class="svc-btn svc-btn-sm" data-growth-event="paid_cta_click" data-cta-label="Become a Chef" data-experiment-slug="chef-membership">Become a Chef</a>
                     </div>
                     <div class="offering-meta">
                         <div class="price">$149/yr</div>
@@ -457,7 +457,7 @@ body.modal-open{overflow:hidden;}
                         <div class="offering-tag">Waitlist Open</div>
                         <h3>Chef's Selection</h3>
                         <p class="desc">Everything in Chef, plus a recipe book built just for you. Tell me your tools, your role, and where your time goes, and I'll hand-pick the recipes that fit. Then I'll record you a personal Loom (no generic explainer, just me walking through your picks and where to start) refreshed every year as your work changes.</p>
-                        <button type="button" class="svc-btn svc-btn-sm" data-waitlist-open>Join the waitlist</button>
+                        <button type="button" class="svc-btn svc-btn-sm" data-waitlist-open data-growth-event="paid_cta_click" data-cta-label="Join the waitlist" data-experiment-slug="chefs-selection" data-target-url="services.html#chef-selection-waitlist">Join the waitlist</button>
                     </div>
                     <div class="offering-meta">
                         <div class="price">$349/yr</div>
@@ -559,8 +559,8 @@ body.modal-open{overflow:hidden;}
                             <tr>
                                 <td class="feature-col"></td>
                                 <td><a href="https://ideakitchen.substack.com/subscribe" target="_blank" rel="noopener" class="svc-btn svc-btn-sm svc-btn-ghost" style="margin-top:0;">Subscribe</a></td>
-                                <td class="featured-col"><a href="https://ideakitchen.substack.com/subscribe" target="_blank" rel="noopener" class="svc-btn svc-btn-sm" style="margin-top:0;">Become a Chef</a></td>
-                                <td><button type="button" class="svc-btn svc-btn-sm" data-waitlist-open style="margin-top:0;">Join the waitlist</button></td>
+                                <td class="featured-col"><a href="https://ideakitchen.substack.com/subscribe" target="_blank" rel="noopener" class="svc-btn svc-btn-sm" style="margin-top:0;" data-growth-event="paid_cta_click" data-cta-label="Become a Chef" data-experiment-slug="chef-membership">Become a Chef</a></td>
+                                <td><button type="button" class="svc-btn svc-btn-sm" data-waitlist-open style="margin-top:0;" data-growth-event="paid_cta_click" data-cta-label="Join the waitlist" data-experiment-slug="chefs-selection" data-target-url="services.html#chef-selection-waitlist">Join the waitlist</button></td>
                             </tr>
                         </tfoot>
                     </table>
@@ -584,7 +584,7 @@ body.modal-open{overflow:hidden;}
                             <li>Daily AI briefing for your team</li>
                             <li>Chef seats available now; Chef's Selection waitlist coming soon</li>
                         </ul>
-                        <a href="https://ideakitchen.substack.com/subscribe?group=true" target="_blank" rel="noopener" class="svc-btn svc-btn-sm">Get started</a>
+                        <a href="https://ideakitchen.substack.com/subscribe?group=true" target="_blank" rel="noopener" class="svc-btn svc-btn-sm" data-growth-event="paid_cta_click" data-cta-label="Get started" data-experiment-slug="team-membership">Get started</a>
                     </div>
                     <div class="offering-meta">
                         <div class="price">$129/yr</div>
@@ -941,5 +941,7 @@ body.modal-open{overflow:hidden;}
     window.addEventListener('hashchange', () => setTab(tabFromHash(), false));
 </script>
 <script src="nav.js"></script>
+<script src="growth-analytics.js?v=1"></script>
 </body>
 </html>
+
