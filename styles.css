@@ -672,6 +672,27 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.preferred-source {
+    margin: 0 auto 1.5rem;
+}
+
+.preferred-source p {
+    margin: 0 0 0.65rem;
+    color: rgba(255, 248, 240, 0.72);
+    font-size: 0.9rem;
+}
+
+.preferred-source [google-add-preferred-source-btn] {
+    display: flex;
+    justify-content: center;
+    min-height: 40px;
+}
+
+.preferred-source noscript a {
+    color: #FFF8F0;
+    font-size: 0.9rem;
+}
+
 .footer-text {
     font-size: 0.95rem;
     margin-bottom: 1.2rem;
