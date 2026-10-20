@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="analytics.js"></script>
+<title>Pipit — The community website residents actually open | Idea Kitchen</title>
+<meta name="description" content="Pipit turns a community's rulebook, calendars and everything happening nearby into one site residents check every day, with plain-English answers they can verify. The software behind Sterling Ranch Society.">
+<meta name="author" content="Marissa Goldberg">
+<meta property="og:title" content="Pipit — The community website residents actually open">
+<meta property="og:description" content="One site for your community's rules, calendars and everything nearby, with plain-English answers residents can verify. For master-planned communities, HOAs and metro districts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ideakitchen.ai/pipit.html">
+<meta property="og:image" content="https://ideakitchen.ai/pipit/srs-today.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pipit — The community website residents actually open">
+<meta name="twitter:description" content="One site for your community's rules, calendars and everything nearby, with plain-English answers residents can verify.">
+<meta name="twitter:image" content="https://ideakitchen.ai/pipit/srs-today.jpg">
+<link rel="canonical" href="https://ideakitchen.ai/pipit.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=15">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Source Serif 4',Georgia,serif;background:#1A1A1A;color:#2D2B2B;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:#A0522D;}
+a:hover{color:#7a3d20;}
+
+.pp-page{max-width:980px;margin:0 auto;background:#FCF6E8;}
+.pp-referral{background:#f4ecd9;border-bottom:1px solid #e0d3b7;padding:.6rem 1.25rem;text-align:center;font-size:.9rem;color:#5a514c;}
+.pp-inner{padding:3.5rem clamp(1.25rem,6vw,4.5rem) 3.5rem;}
+.pp-h2{font-family:'Special Elite',monospace;font-weight:400;font-size:1.4rem;color:#4A2040;line-height:1.3;}
+.pp-page h3{font-family:'Source Serif 4',Georgia,serif;letter-spacing:0;}
+.pp-page p{font-family:'Source Serif 4',Georgia,serif;}
+.pp-center{text-align:center;}
+.pp-eyebrow{font-family:'Special Elite',monospace;font-size:.75rem;letter-spacing:.18em;color:#66735A;margin-bottom:1.1rem;}
+.pp-h1{font-family:'Special Elite',monospace;font-weight:400;font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.12;color:#1A1A1A;max-width:760px;margin:0 auto;}
+.pp-lede{font-size:1.2rem;line-height:1.55;color:#4A2040;max-width:620px;margin:1.4rem auto 0;}
+.pp-btn{display:inline-block;font-family:'Special Elite',monospace;font-size:1rem;background:#A0522D;color:#FFF8F0;text-decoration:none;border:0;border-radius:3px;padding:.95rem 1.6rem;cursor:pointer;line-height:1.2;}
+.pp-btn:hover{background:#86431f;color:#FFF8F0;}
+.pp-textlink{font-family:'Special Elite',monospace;font-size:.95rem;}
+.pp-hero-actions{margin-top:1.9rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem 1.25rem;align-items:center;}
+.pp-shot{border:1px solid #d9cdb4;background:#fff;padding:5px;border-radius:3px;}
+.pp-shot img{display:block;width:100%;height:auto;}
+.pp-hero-shot{display:block;margin:2.75rem 0 0;padding:8px;box-shadow:0 22px 44px -26px rgba(45,43,43,.5);}
+.pp-caption{margin-top:.75rem;font-size:.9rem;font-style:italic;color:#5a514c;}
+.pp-section{margin-top:4.5rem;}
+.pp-grid{display:grid;gap:1.75rem;}
+.pp-grid-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+.pp-grid-4{grid-template-columns:repeat(auto-fit,minmax(176px,1fr));gap:1.75rem 1.5rem;}
+.pp-grid-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem 2.25rem;}
+.pp-card{border-top:2px solid #2D2B2B;padding-top:.9rem;}
+.pp-card h3,.pp-apart h3,.pp-faq h3,.pp-trust h3{font-size:1.1rem;font-weight:600;line-height:1.3;margin-bottom:.45rem;color:#2D2B2B;}
+.pp-card p,.pp-apart p,.pp-faq p,.pp-trust p{font-size:.95rem;line-height:1.6;color:#4a4542;}
+.pp-apart{border-top:1px solid #cbbf9f;padding-top:.9rem;}
+.pp-apart h3{font-size:1rem;}
+.pp-apart p{font-size:.9rem;}
+.pp-after{max-width:620px;margin:2.1rem auto 0;text-align:center;font-size:1.1rem;line-height:1.6;}
+.pp-quote{max-width:680px;margin:4.5rem auto 0;text-align:center;}
+.pp-quote-mark{display:block;margin:0 auto .9rem;}
+.pp-quote-text{font-family:'Special Elite',monospace;font-size:clamp(1.5rem,4vw,2rem);line-height:1.3;color:#1A1A1A;}
+.pp-quote-by{margin-top:1rem;font-size:.95rem;color:#5a514c;}
+.pp-sub{text-align:center;font-size:.95rem;font-style:italic;color:#5a514c;margin:.5rem 0 1.75rem;}
+.pp-tour figure{margin:0;}
+.pp-tour img{aspect-ratio:3/2;object-fit:cover;object-position:top;}
+.pp-tour figcaption{margin-top:.75rem;}
+.pp-tour .pp-tour-name{display:block;font-family:'Special Elite',monospace;font-size:.95rem;color:#1A1A1A;}
+.pp-tour .pp-tour-desc{display:block;margin-top:.25rem;font-size:.9rem;line-height:1.55;color:#4a4542;}
+.pp-plus{margin-top:1.6rem;text-align:center;font-size:.95rem;color:#4a4542;}
+.pp-split{display:flex;flex-wrap:wrap;gap:2.5rem;align-items:center;}
+.pp-split > div{flex:1 1 300px;min-width:0;}
+.pp-split > figure{flex:1 1 340px;min-width:0;margin:0;}
+.pp-steps{display:flex;flex-direction:column;gap:.75rem;margin-top:1.1rem;}
+.pp-step{display:flex;gap:.75rem;align-items:flex-start;font-size:.95rem;line-height:1.6;}
+.pp-step span{font-family:'Special Elite',monospace;color:#A0522D;}
+.pp-trust-box{background:#f4ecd9;border:1px solid #e0d3b7;border-radius:4px;padding:clamp(1.5rem,4vw,2.25rem);}
+.pp-trust-box .pp-h2{margin-bottom:.35rem;}
+.pp-trust-box .pp-boxsub{font-size:.95rem;color:#5a514c;font-style:italic;margin-bottom:1.4rem;}
+.pp-trust h3{font-size:1rem;margin-bottom:.35rem;}
+.pp-trust p{font-size:.9rem;}
+.pp-section.pp-prose{max-width:660px;margin:4.5rem auto 0;}
+.pp-prose p{font-size:1rem;line-height:1.65;margin-bottom:.9rem;}
+.pp-prose p:last-child{margin-bottom:0;}
+.pp-note{margin-top:.9rem;font-size:.9rem;font-style:italic;color:#5a514c;}
+.pp-coming{margin-top:1.75rem;text-align:center;font-size:.95rem;color:#4a4542;}
+.pp-coming span{font-family:'Special Elite',monospace;color:#A0522D;}
+.pp-bio{display:flex;flex-wrap:wrap;gap:2.25rem;align-items:center;}
+.pp-bio figure{flex:0 0 180px;margin:0;}
+.pp-bio img{display:block;width:180px;height:180px;object-fit:cover;object-position:top;border-radius:50%;border:1px solid #d9cdb4;background:#f6eedc;}
+.pp-bio > div{flex:1 1 360px;min-width:0;}
+.pp-bio .pp-h2{margin-bottom:.9rem;}
+.pp-bio p{font-size:1rem;line-height:1.65;margin-bottom:.9rem;}
+.pp-bio p:last-child{margin-bottom:0;}
+.pp-how{border-top:2px solid #2D2B2B;padding-top:1rem;}
+.pp-how .pp-num{font-family:'Special Elite',monospace;font-size:.8rem;color:#A0522D;margin-bottom:.5rem;}
+.pp-pricing{max-width:620px;margin:4.5rem auto 0;border-top:2px solid #2D2B2B;border-bottom:1px solid #e2d8c2;padding:1.5rem 0;display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-between;align-items:baseline;}
+.pp-pricing .pp-h2{font-size:1.25rem;}
+.pp-pricing > div{flex:1 1 360px;font-size:.95rem;line-height:1.65;color:#4a4542;}
+.pp-pricing .pp-price{color:#2D2B2B;font-size:1.05rem;margin-bottom:.4rem;}
+.pp-section.pp-faq{max-width:660px;margin:4.5rem auto 0;}
+.pp-faq-item{padding:1.1rem 0;border-top:1px solid #e2d8c2;}
+.pp-request{background:#f4ecd9;border:1px solid #e0d3b7;padding:clamp(1.5rem,5vw,3rem);border-radius:4px;}
+.pp-request h2{text-align:center;font-family:'Special Elite',monospace;font-weight:400;font-size:clamp(1.5rem,4vw,1.9rem);color:#1A1A1A;}
+.pp-request .pp-intro{margin:.75rem auto .5rem;max-width:500px;text-align:center;font-size:1rem;line-height:1.6;color:#4a4542;}
+.pp-request .pp-intro-sub{margin:0 auto 2rem;max-width:500px;text-align:center;font-size:.9rem;font-style:italic;color:#5a514c;}
+.pp-form{display:flex;flex-direction:column;gap:1.25rem;}
+.pp-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;}
+.pp-form label{display:flex;flex-direction:column;gap:.35rem;font-size:.9rem;font-weight:600;}
+.pp-input{font-family:'Source Serif 4',Georgia,serif;font-size:1rem;font-weight:400;color:#2D2B2B;background:#fffdf8;border:1px solid #cfc4ae;border-radius:3px;padding:.75rem .85rem;min-height:46px;width:100%;}
+.pp-input:focus{outline:2px solid #A0522D;outline-offset:1px;border-color:#A0522D;}
+.pp-form fieldset{border:0;padding:0;margin:0;}
+.pp-form legend{font-size:.9rem;font-weight:600;margin-bottom:.25rem;}
+.pp-checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 1.25rem;}
+.pp-form .pp-check{display:flex;flex-direction:row;align-items:center;gap:.6rem;min-height:44px;font-size:.95rem;font-weight:400;cursor:pointer;}
+.pp-check input{width:18px;height:18px;accent-color:#A0522D;margin:0;}
+.pp-honeypot{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+.pp-form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.5rem;margin-top:.25rem;}
+.pp-form-actions p{font-size:.9rem;font-style:italic;color:#5a514c;}
+.pp-form-status{min-height:1.4em;font-size:.95rem;}
+.pp-form-status.is-error{color:#9a2f2f;}
+.pp-form-status.is-success{color:#3f5a3a;}
+.pp-thanks{text-align:center;padding:1.5rem 0;}
+.pp-thanks h2{font-family:'Special Elite',monospace;font-weight:400;font-size:1.6rem;margin:.9rem 0 .6rem;}
+.pp-thanks p{max-width:420px;margin:0 auto;font-size:1rem;line-height:1.6;color:#4a4542;}
+.pp-demo{max-width:520px;margin:3.5rem auto 0;text-align:center;font-size:.95rem;line-height:1.6;color:#4a4542;}
+.pp-footer{margin-top:3.5rem;border-top:1px solid #e2d8c2;padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem 1.5rem;font-size:.9rem;color:#5a514c;}
+.pp-footer nav{display:flex;flex-wrap:wrap;gap:1.25rem;}
+@media (max-width:600px){
+  .pp-bio{justify-content:center;text-align:center;}
+  .pp-bio img{width:140px;height:140px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="nav-inner">
+        <a href="./" class="nav-brand">
+            <div class="nav-brand-text">
+                <span class="nav-name">Idea Kitchen</span>
+                <span class="nav-tagline">Simple recipes for everyday AI</span>
+            </div>
+        </a>
+        <nav class="nav-links" id="primary-nav">
+            <a href="recipes.html" class="nav-link">Recipe Box</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="https://sterlingranchsociety.com/" class="nav-link" target="_blank" rel="noopener">Sterling Ranch Society ↗</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+        <div class="nav-subscribe-wrap">
+            <a href="#request" class="nav-subscribe">Request Pipit →</a>
+        </div>
+    </div>
+</nav>
+
+<div class="pp-page">
+  <div class="pp-referral" id="pp-referral" hidden>You came from Sterling Ranch Society. That site runs on Pipit.</div>
+  <main class="pp-inner">
+
+    <section class="pp-center">
+      <p class="pp-eyebrow">FOR MASTER-PLANNED COMMUNITIES, HOAS AND METRO DISTRICTS</p>
+      <h1 class="pp-h1">The community website residents actually open.</h1>
+      <p class="pp-lede">Pipit turns your rulebook, calendars and everything happening nearby into one site residents check every day, with plain-English answers they can verify. Fewer repeat questions for your staff.</p>
+      <div class="pp-hero-actions">
+        <a class="pp-btn" href="#request">Request Pipit for your community →</a>
+        <a class="pp-textlink" href="https://sterlingranchsociety.com/" target="_blank" rel="noopener">See it live at Sterling Ranch ↗</a>
+      </div>
+    </section>
+
+    <figure>
+      <a class="pp-shot pp-hero-shot" href="https://sterlingranchsociety.com/" target="_blank" rel="noopener">
+        <img src="pipit/srs-today.jpg" width="1244" height="812" alt="The Sterling Ranch Society homepage: today's food truck, the community assistant, local weather, today's events, the place of the day and new openings">
+      </a>
+      <figcaption class="pp-caption pp-center">Sterling Ranch Society's today page, built on Pipit. About 3,000 homes in Douglas County, Colorado.</figcaption>
+    </figure>
+
+    <section class="pp-section">
+      <h2 class="pp-h2 pp-center" style="margin-bottom:1.6rem">Sound familiar?</h2>
+      <div class="pp-grid pp-grid-3">
+        <div class="pp-card"><h3>The same questions, every week</h3><p>Trash day. Pool hours. Fence colors. Your staff answers them one email at a time, and the Facebook group answers them wrong.</p></div>
+        <div class="pp-card"><h3>Answers buried in PDFs</h3><p>The rulebook is 90 pages on a district site most residents can’t find. So they guess, and some of them get a letter.</p></div>
+        <div class="pp-card"><h3>News nobody sees</h3><p>Events, openings and notices are spread across portals, flyers and social media. Residents hear about the pumpkin patch the day after it closes.</p></div>
+      </div>
+      <p class="pp-after">Pipit puts it all in one place and turns it into <strong>what residents need to know today</strong>, before anyone has to ask.</p>
+    </section>
+
+    <section class="pp-quote">
+      <svg class="pp-quote-mark" aria-hidden="true" width="34" height="26" viewBox="0 0 34 26" fill="#C98B50"><path d="M0 26V15C0 6.7 4.6 1.6 12.6 0l1.6 3.6C9.4 5.2 7.2 8.2 7 12.4h6V26H0Zm20 0V15c0-8.3 4.6-13.4 12.6-15l1.4 3.6c-4.8 1.6-7 4.6-7.2 8.8h6V26H20Z"/></svg>
+      <p class="pp-quote-text">Now this is where I want my tax dollars going…</p>
+      <p class="pp-quote-by">A Sterling Ranch resident, the day the community assistant launched</p>
+    </section>
+
+    <section class="pp-section pp-tour">
+      <h2 class="pp-h2 pp-center">What residents get</h2>
+      <p class="pp-sub">All of it is live on Sterling Ranch Society today.</p>
+      <div class="pp-grid pp-grid-3" style="gap:1.75rem 1.5rem">
+        <figure>
+          <div class="pp-shot"><img src="pipit/srs-openings.jpg" width="600" height="400" alt="The newest opening on the Openings page, with a map of dots showing places by distance from home"></div>
+          <figcaption><span class="pp-tour-name">New openings</span><span class="pp-tour-desc">Every shop and restaurant opening nearby, with drive times from the community.</span></figcaption>
+        </figure>
+        <figure>
+          <div class="pp-shot"><img src="pipit/srs-events.jpg" width="780" height="520" alt="The Week’s Trail: a timeline of this week’s community events with weather and food trucks"></div>
+          <figcaption><span class="pp-tour-name">The week’s events</span><span class="pp-tour-desc">Every community event on one trail, with each day’s weather and food truck.</span></figcaption>
+        </figure>
+        <figure>
+          <div class="pp-shot"><img src="pipit/srs-map.jpg" width="519" height="378" alt="The illustrated 3D community map of Sterling Ranch"></div>
+          <figcaption><span class="pp-tour-name">An illustrated map</span><span class="pp-tour-desc">Parks, trails, amenities and local makers, laid out the way residents think about the place.</span></figcaption>
+        </figure>
+      </div>
+      <p class="pp-plus">Plus the food truck schedule, pool status, local makers, a resident guide and seasonal roundups like the fall events guide.</p>
+    </section>
+
+    <section class="pp-section pp-split">
+      <div>
+        <h2 class="pp-h2" style="margin-bottom:1rem">An assistant you can check</h2>
+        <p style="font-size:1rem;line-height:1.65">Residents get a plain-English answer they can act on. Every answer shows its work.</p>
+        <div class="pp-steps">
+          <div class="pp-step"><span aria-hidden="true">01</span><p>It answers only from your rulebook, calendars and guides.</p></div>
+          <div class="pp-step"><span aria-hidden="true">02</span><p>The exact section it used sits right under the answer.</p></div>
+          <div class="pp-step"><span aria-hidden="true">03</span><p>When it can’t find something, it says so and points residents to who can help.</p></div>
+        </div>
+      </div>
+      <figure>
+        <div class="pp-shot" style="padding:6px"><img src="pipit/srs-assistant.jpg" width="870" height="298" alt="A Sterling Ranch Society assistant answer: the approved fence stain, with the two rulebook sections it came from"></div>
+        <figcaption class="pp-caption">"What color should I stain my fence?" answered from the two rulebook sections it came from, with a thumbs-up or thumbs-down on every answer.</figcaption>
+      </figure>
+    </section>
+
+    <section class="pp-section pp-trust-box">
+      <h2 class="pp-h2">Built for public bodies</h2>
+      <p class="pp-boxsub">The things a board or district needs to know before saying yes.</p>
+      <div class="pp-grid pp-grid-2">
+        <div class="pp-trust"><h3>Sources, every time</h3><p>Every answer links to the official document it came from, so residents and staff can check it.</p></div>
+        <div class="pp-trust"><h3>Your documents stay yours</h3><p>Pipit reads your rules and calendars to answer questions. They are never sold, shared or used to train anything.</p></div>
+        <div class="pp-trust"><h3>Independent and additive</h3><p>Pipit sits alongside your official website and links to it. Nothing official moves or changes.</p></div>
+        <div class="pp-trust"><h3>Built to be accessible</h3><p>Large type, real headings, plain language and pages that work with a keyboard, on a phone or a desktop.</p></div>
+      </div>
+    </section>
+
+    <section class="pp-section pp-prose">
+      <h2 class="pp-h2" style="margin-bottom:1rem">For the people who run the community</h2>
+      <p>A question log shows every question residents ask and how well it was answered. Rate the answers, fix the ones that miss, and see what's confusing people before it turns into a heated thread.</p>
+      <p>If forty people ask about pool hours in May, the pool page needs work, and you'll know that week.</p>
+    </section>
+
+    <section class="pp-section pp-center" style="margin-top:4rem">
+      <a class="pp-btn" href="#request" style="font-size:1.05rem;padding:1rem 1.9rem">Request Pipit for your community →</a>
+      <p class="pp-note">No sales call. Just a reply by email.</p>
+    </section>
+
+    <section class="pp-section">
+      <h2 class="pp-h2 pp-center">Why not just a chatbot, or a template site?</h2>
+      <p class="pp-sub" style="font-style:normal;max-width:520px;margin-left:auto;margin-right:auto">There are plenty of both. Here's what you won't find anywhere else.</p>
+      <div class="pp-grid pp-grid-4">
+        <div class="pp-apart"><h3>Help before anyone asks</h3><p>Pipit turns calendars, forecasts, menus and openings into a page that’s useful the moment someone opens it, with no question required.</p></div>
+        <div class="pp-apart"><h3>Plain-English answers</h3><p>Rules written in legalese come back as a sentence a neighbor would say, with the official wording right underneath.</p></div>
+        <div class="pp-apart"><h3>Answers you can trust</h3><p>It answers only from your documents, shows the exact section and says when it doesn’t know. No made-up rules.</p></div>
+        <div class="pp-apart"><h3>One answer from every source</h3><p>HOA rules, metro district notices, calendars and local places, pulled into a single answer.</p></div>
+        <div class="pp-apart"><h3>Made by a resident</h3><p>Built by a Sterling Ranch neighbor who served on the community’s board and uses it every day.</p></div>
+        <div class="pp-apart"><h3>Something people want to open</h3><p>Engraved art, a masthead and a fresh edition every morning, like a small-town paper.</p></div>
+        <div class="pp-apart"><h3>Good for local businesses</h3><p>Makers and new shops get found by the people who live closest to them, free.</p></div>
+        <div class="pp-apart"><h3>You can see what residents need</h3><p>The question log shows every question and how well it was answered.</p></div>
+      </div>
+      <p class="pp-coming"><span>Coming soon:</span> ask your community's questions right from ChatGPT or Claude, plus an app and texting.</p>
+    </section>
+
+    <section class="pp-section pp-bio">
+      <figure><img src="marissa-cut.png" width="340" height="340" alt="Watercolor portrait of Marissa Goldberg"></figure>
+      <div>
+        <h2 class="pp-h2">Made by a neighbor</h2>
+        <p>Pipit is made by Idea Kitchen, a Colorado company run by Marissa Goldberg. Marissa is a working mom who has lived in Sterling Ranch since 2019. She was the first resident elected to the Sterling Ranch Community Authority Board and served as a metro district representative from 2020 to 2023, so she has sat through the budget meetings, read the rulebook cover to cover and answered the trash-day questions herself.</p>
+        <p>Sterling Ranch Society is the site she wanted as a resident: one place to check before a busy day, with answers she could trust. Pipit is how other communities get the same thing.</p>
+      </div>
+    </section>
+
+    <section class="pp-section">
+      <h2 class="pp-h2 pp-center" style="margin-bottom:1.75rem">How it works</h2>
+      <div class="pp-grid pp-grid-3">
+        <div class="pp-how"><p class="pp-num">01</p><h3 style="font-size:1.1rem;font-weight:600;margin-bottom:.45rem">Tell us about your community</h3><p style="font-size:.95rem;line-height:1.6;color:#4a4542">Fill out the short form below. There’s no call to schedule.</p></div>
+        <div class="pp-how"><p class="pp-num">02</p><h3 style="font-size:1.1rem;font-weight:600;margin-bottom:.45rem">We set it up for you</h3><p style="font-size:.95rem;line-height:1.6;color:#4a4542">Your rulebook, calendars, amenities and local spots go in. You get a preview link to try with a few residents.</p></div>
+        <div class="pp-how"><p class="pp-num">03</p><h3 style="font-size:1.1rem;font-weight:600;margin-bottom:.45rem">It keeps itself current</h3><p style="font-size:.95rem;line-height:1.6;color:#4a4542">Calendars, openings and food trucks update on their own. Send a correction anytime.</p></div>
+      </div>
+    </section>
+
+    <section class="pp-pricing">
+      <h2 class="pp-h2">Pricing</h2>
+      <div>
+        <p class="pp-price"><strong>Starting at $50,000 to set up and $1,500 a month.</strong></p>
+        <p>Setup covers your documents, calendars, branding and an illustrated 3D map of your community. The monthly fee covers hosting, the assistant, updates and support. Final pricing depends on the size of the community; ask for a quote in the form below.</p>
+      </div>
+    </section>
+
+    <section class="pp-section pp-faq">
+      <h2 class="pp-h2 pp-center" style="margin-bottom:1.4rem">Common questions</h2>
+      <div class="pp-faq-item"><h3>What if the assistant gets something wrong?</h3><p>It’s built to answer only from your documents and to show the section it used, so anyone can check it. When it can’t find something, it says so. Every answer also lands in the question log, where you can flag the ones that miss.</p></div>
+      <div class="pp-faq-item"><h3>How is this different from Nextdoor or our Facebook group?</h3><p>Those wait for someone to post and someone else to answer, and nobody checks the answers. Pipit shows what’s happening before anyone asks, and its answers come from your official documents with the source attached.</p></div>
+      <div class="pp-faq-item"><h3>How will residents know what’s official?</h3><p>Every answer links to the official document it came from. The site is labeled as an independent resource and sends residents to the HOA or district whenever that’s where the answer lives.</p></div>
+      <div class="pp-faq-item"><h3>Do we have to replace our official HOA or district website?</h3><p>No. Pipit sits alongside it. Sterling Ranch Society is independent and links out to the official sources.</p></div>
+      <div class="pp-faq-item"><h3>Can we try it before committing?</h3><p>Yes. Every community gets a preview link to test with a few residents before anything goes live.</p></div>
+    </section>
+
+    <section id="request" class="pp-section pp-request">
+      <div id="pp-request-body">
+        <h2>Request Pipit for your community</h2>
+        <p class="pp-intro">A small group of founding communities is being set up this winter. Tell us a little about yours; it takes about two minutes.</p>
+        <p class="pp-intro-sub">Boards, districts, managers and residents are all welcome to ask.</p>
+        <form class="pp-form" id="pp-form" novalidate>
+          <div class="pp-form-grid">
+            <label>Your name<input class="pp-input" type="text" name="name" autocomplete="name" maxlength="120"></label>
+            <label>Email<input class="pp-input" type="email" name="email" autocomplete="email" required maxlength="254"></label>
+            <label>Community name<input class="pp-input" type="text" name="community" placeholder="e.g. Sterling Ranch" maxlength="120"></label>
+            <label>City and state<input class="pp-input" type="text" name="city" placeholder="e.g. Littleton, CO" maxlength="120"></label>
+            <label>About how many homes?
+              <select class="pp-input" name="homes">
+                <option value="">Choose one</option>
+                <option>Under 500</option>
+                <option>500 to 3,000</option>
+                <option>3,000 to 10,000</option>
+                <option>More than 10,000</option>
+                <option>Not sure</option>
+              </select>
+            </label>
+            <label>Your role
+              <select class="pp-input" name="role">
+                <option value="">Choose one</option>
+                <option>HOA or master association board</option>
+                <option>Metro district board or staff</option>
+                <option>Community manager</option>
+                <option>Developer or builder</option>
+                <option>Resident</option>
+                <option>Something else</option>
+              </select>
+            </label>
+          </div>
+          <label>What do residents ask about most?<textarea class="pp-input" name="pain" rows="3" placeholder="Trash days, pool hours, what color the mailbox can be…" maxlength="2000" style="resize:vertical"></textarea></label>
+          <fieldset>
+            <legend>What would help most?</legend>
+            <div class="pp-checks">
+              <label class="pp-check"><input type="checkbox" name="wants" value="assistant">Answers to rule and HOA questions</label>
+              <label class="pp-check"><input type="checkbox" name="wants" value="events">One calendar for everything</label>
+              <label class="pp-check"><input type="checkbox" name="wants" value="openings">Keeping up with new places</label>
+              <label class="pp-check"><input type="checkbox" name="wants" value="makers">Showing off local makers</label>
+              <label class="pp-check"><input type="checkbox" name="wants" value="map">A map of parks and amenities</label>
+              <label class="pp-check"><input type="checkbox" name="wants" value="unsure">Not sure yet</label>
+            </div>
+          </fieldset>
+          <label>Current community website, if there is one<input class="pp-input" type="url" name="site" placeholder="https://" maxlength="500"></label>
+          <input class="pp-honeypot" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="pp-form-actions">
+            <button class="pp-btn" type="submit">Send request →</button>
+            <p>No sales call. You'll get a reply by email within a few days.</p>
+          </div>
+          <p class="pp-form-status" id="pp-form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="pp-thanks" id="pp-thanks" hidden>
+        <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#A0522D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto"><path d="M4 7h16v11H4z"/><path d="m4 7 8 6 8-6"/></svg>
+        <h2>Got it, thank you.</h2>
+        <p>We'll look at your community and email you within a few days with what a Pipit site could look like there.</p>
+      </div>
+    </section>
+
+    <p class="pp-demo">Not ready yet? Open <a href="https://sterlingranchsociety.com/" target="_blank" rel="noopener">Sterling Ranch Society</a> and ask the assistant a question.</p>
+
+    <footer class="pp-footer">
+      <nav aria-label="Pipit links">
+        <a href="https://sterlingranchsociety.com/" target="_blank" rel="noopener">Sterling Ranch Society</a>
+        <a href="./">Idea Kitchen</a>
+        <a href="#request">Contact</a>
+      </nav>
+      <span>© 2026 Idea Kitchen, Douglas County, Colorado</span>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function () {
+    var params = new URLSearchParams(location.search);
+    var fromSrs = (params.get('from') || '').toLowerCase() === 'srs';
+    if (fromSrs) document.getElementById('pp-referral').hidden = false;
+
+    var endpoint = 'https://ideakitchen-production.up.railway.app/api/pipit-request';
+    var form = document.getElementById('pp-form');
+    var status = document.getElementById('pp-form-status');
+
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        var button = form.querySelector('button[type="submit"]');
+        var email = form.elements.email.value.trim();
+
+        status.className = 'pp-form-status';
+        if (!email || !form.elements.email.checkValidity()) {
+            status.textContent = 'Please enter a valid email address.';
+            status.classList.add('is-error');
+            form.elements.email.focus();
+            return;
+        }
+
+        var wants = [];
+        form.querySelectorAll('input[name="wants"]:checked').forEach(function (box) { wants.push(box.value); });
+
+        button.disabled = true;
+        button.textContent = 'Sending…';
+        form.setAttribute('aria-busy', 'true');
+        status.textContent = '';
+
+        try {
+            var response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: form.elements.name.value,
+                    email: email,
+                    community: form.elements.community.value,
+                    city: form.elements.city.value,
+                    homes: form.elements.homes.value,
+                    role: form.elements.role.value,
+                    pain: form.elements.pain.value,
+                    wants: wants,
+                    site: form.elements.site.value,
+                    company: form.elements.company.value,
+                    source: fromSrs ? 'srs' : 'website'
+                })
+            });
+            var result = await response.json().catch(function () { return {}; });
+            if (!response.ok) throw new Error(result.error || 'Please try again.');
+
+            document.getElementById('pp-request-body').hidden = true;
+            document.getElementById('pp-thanks').hidden = false;
+            if (typeof sendAnalyticsEvent === 'function') sendAnalyticsEvent('pipit_request', { source: fromSrs ? 'srs' : 'website' });
+        } catch (error) {
+            status.textContent = error.message || "We couldn't send that right now. Please try again.";
+            status.classList.add('is-error');
+        } finally {
+            button.disabled = false;
+            button.textContent = 'Send request →';
+            form.removeAttribute('aria-busy');
+        }
+    });
+})();
+</script>
+<script src="nav.js"></script>
+</body>
+</html>
