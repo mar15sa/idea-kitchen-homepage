@@ -156,7 +156,7 @@ a:hover{color:#7a3d20;}
         </nav>
         <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
         <div class="nav-subscribe-wrap">
-            <a href="#request" class="nav-subscribe">Request Pipit →</a>
+            <a href="#request" class="nav-subscribe" data-growth-event="pipit_cta_click" data-cta-label="Header: Request Pipit">Request Pipit →</a>
         </div>
     </div>
 </nav>
@@ -170,7 +170,7 @@ a:hover{color:#7a3d20;}
       <h1 class="pp-h1">The community website residents actually open.</h1>
       <p class="pp-lede">Pipit turns your rulebook, calendars and everything happening nearby into one site residents check every day, with plain-English answers they can verify. Fewer repeat questions for your staff.</p>
       <div class="pp-hero-actions">
-        <a class="pp-btn" href="#request">Request Pipit for your community →</a>
+        <a class="pp-btn" href="#request" data-growth-event="pipit_cta_click" data-cta-label="Hero: Request Pipit for your community">Request Pipit for your community →</a>
         <a class="pp-textlink" href="https://sterlingranchsociety.com/" target="_blank" rel="noopener">See it live at Sterling Ranch ↗</a>
       </div>
     </section>
@@ -252,7 +252,7 @@ a:hover{color:#7a3d20;}
     </section>
 
     <section class="pp-section pp-center" style="margin-top:4rem">
-      <a class="pp-btn" href="#request" style="font-size:1.05rem;padding:1rem 1.9rem">Request Pipit for your community →</a>
+      <a class="pp-btn" href="#request" style="font-size:1.05rem;padding:1rem 1.9rem" data-growth-event="pipit_cta_click" data-cta-label="Mid-page: Request Pipit for your community">Request Pipit for your community →</a>
       <p class="pp-note">No sales call. Just a reply by email.</p>
     </section>
 
@@ -436,6 +436,26 @@ a:hover{color:#7a3d20;}
             document.getElementById('pp-request-body').hidden = true;
             document.getElementById('pp-thanks').hidden = false;
             if (typeof sendAnalyticsEvent === 'function') sendAnalyticsEvent('pipit_request', { source: fromSrs ? 'srs' : 'website' });
+            // Mirror the submission into the internal growth feed.
+            try {
+                var growthBody = JSON.stringify({
+                    eventName: 'pipit_request',
+                    source: 'website',
+                    pagePath: window.location.pathname,
+                    pageTitle: document.title,
+                    targetUrl: null,
+                    ctaLabel: fromSrs ? 'Pipit request (from SRS)' : 'Pipit request',
+                    referrer: document.referrer || null,
+                    utmSource: new URLSearchParams(window.location.search).get('utm_source') || (fromSrs ? 'srs' : null),
+                    utmMedium: new URLSearchParams(window.location.search).get('utm_medium') || (fromSrs ? 'footer' : null),
+                    utmCampaign: new URLSearchParams(window.location.search).get('utm_campaign') || null,
+                    occurredAt: new Date().toISOString()
+                });
+                var growthUrl = 'https://ideakitchen-production.up.railway.app/api/growth/events';
+                if (!(navigator.sendBeacon && navigator.sendBeacon(growthUrl, new Blob([growthBody], { type: 'application/json' })))) {
+                    fetch(growthUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: growthBody, keepalive: true }).catch(function () {});
+                }
+            } catch (e) {}
         } catch (error) {
             status.textContent = error.message || "We couldn't send that right now. Please try again.";
             status.classList.add('is-error');
@@ -448,5 +468,6 @@ a:hover{color:#7a3d20;}
 })();
 </script>
 <script src="nav.js?v=2"></script>
+<script src="growth-analytics.js?v=1"></script>
 </body>
 </html>
