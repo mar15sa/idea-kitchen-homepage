@@ -205,8 +205,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-caret {
     display: inline-block;
-    font-size: 0.7em;
-    margin-left: 0.2em;
+    width: 10px;
+    height: 6px;
+    margin-left: 0.35em;
+    vertical-align: middle;
+    opacity: 0.8;
     transition: transform 0.2s ease;
 }
 
